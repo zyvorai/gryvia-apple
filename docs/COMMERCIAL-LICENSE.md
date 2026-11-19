@@ -40,7 +40,7 @@ Payment is by invoice. *[Licensor and counsel to confirm: the grant text above s
 
 ## Proof and terms
 
-- The invoice or payment receipt is the proof. There are no keys or accounts; the software does not check.
+- The invoice or payment receipt is the proof. Earlier purchasers need no key. The Mac app can show an optional licence key (for example the free 30-day trial key from sales@zyvor.dev); it never disables features and makes no network calls.
 - Provided as is, no warranty, under the same disclaimers as the BUSL. Payments are non-refundable except as
   required by law.
 - Questions, receipts, new download links, and larger or multi-entity licences: sales@zyvor.dev.
