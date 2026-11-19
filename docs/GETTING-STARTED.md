@@ -12,7 +12,7 @@ Download `Gryvia-0.5.2.dmg` and `Gryvia-0.5.2.dmg.sha256` from the [release page
 shasum -a 256 -c Gryvia-0.5.2.dmg.sha256
 ```
 
-**Free 30-day trial key: sales@zyvor.dev.** Licences are at https://zyvor.dev/buy.
+The app runs without a key. For a free 30-day trial key, email sales@zyvor.dev. Licences are at https://zyvor.dev/buy.
 
 ## 2. Install and open
 

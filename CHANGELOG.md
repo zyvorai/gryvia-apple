@@ -2,7 +2,7 @@
 
 ## v0.5.2
 
-- Notarized DMG for macOS 15 or later on Apple silicon, with a 30-day trial. Free 30-day trial key: sales@zyvor.dev.
+- Notarized DMG for macOS 15 or later on Apple silicon, with a 30-day trial. The app runs without a key. For a free 30-day trial key, email sales@zyvor.dev.
 - The Gryvia Apple source code is private; this repository holds documentation, the website and downloads.
 
 ## v0.5.1 — 2026-11-06
