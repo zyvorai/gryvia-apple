@@ -2,465 +2,121 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
-<title>Gryvia: a control plane for Apple Silicon fleets</title>
-<meta name="description" content="Schedule inference, fine-tuning and benchmarks across your Macs against each machine's unified-memory budget, with quotas, leases, provenance and a live GPU view.">
-<meta property="og:title" content="Gryvia: your Macs, scheduled">
-<meta property="og:description" content="A multi-tenant control plane for Apple Silicon fleets: admission, placement, quotas, leases, provenance and observability.">
-<meta property="og:image" content="img/og.jpg">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+<title>Gryvia Apple · Your Macs, scheduled.</title>
+<meta name="description" content="A multi-tenant control plane for Apple silicon fleets: memory-aware admission, quotas, live GPU cores and signed provenance. Notarized Mac app for macOS 15 or later.">
+<link rel="canonical" href="https://zyvorai.github.io/gryvia-apple/">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="Gryvia Apple">
+<meta property="og:title" content="Gryvia Apple · Your Macs, scheduled.">
+<meta property="og:description" content="Memory-aware admission, quotas, live GPU cores and signed provenance for Apple silicon fleets. Notarized Mac app, free 30-day trial.">
+<meta property="og:url" content="https://zyvorai.github.io/gryvia-apple/">
+<meta property="og:image" content="https://zyvorai.github.io/gryvia-apple/social/og.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Gryvia Apple: Your Macs, scheduled. The app window shows demo data.">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-<link rel="stylesheet" href="tokens.css">
-<link rel="stylesheet" href="site.css">
-<script src="theme.js"></script>
+<meta name="twitter:title" content="Gryvia Apple · Your Macs, scheduled.">
+<meta name="twitter:description" content="Memory-aware admission, quotas, live GPU cores and signed provenance for Apple silicon fleets. Notarized Mac app, free 30-day trial.">
+<meta name="twitter:image" content="https://zyvorai.github.io/gryvia-apple/social/og.png">
+<meta name="twitter:image:alt" content="Gryvia Apple: Your Macs, scheduled. The app window shows demo data.">
+<link rel="stylesheet" href="assets/landing.css">
+<style>:root{--accent-btn:#0071e3;--accent-ink:#0071e3;--accent-grad-a:#0071e3;--accent-grad-b:#5e5ce6}@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--accent-ink:#2997ff}}:root[data-theme="dark"]{--accent-ink:#2997ff}</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Gryvia Apple","applicationCategory":"DeveloperApplication","operatingSystem":"macOS","softwareVersion":"0.5.2","downloadUrl":"https://github.com/zyvorai/gryvia-apple/releases/tag/v0.5.2","url":"https://zyvorai.github.io/gryvia-apple/","description":"A multi-tenant control plane for Apple silicon fleets: memory-aware admission, quotas, live GPU cores and signed provenance. Notarized Mac app for macOS 15 or later.","image":"https://zyvorai.github.io/gryvia-apple/social/og.png","publisher":{"@type":"Organization","name":"Zyvor AI Labs Private Limited","url":"https://zyvor.dev"}}</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<nav class="top" aria-label="Primary">
-  <div class="wrap">
-    <a class="brand" href="#top"><img src="img/apple-touch-icon.png" alt="" width="26" height="26">Gryvia</a>
-    <a class="link hide-sm" href="#new">New</a>
-    <a class="link hide-sm" href="#visible">GPUs</a>
-    <a class="link hide-sm" href="#how">How it works</a>
-    <a class="link hide-sm" href="#models">Models</a>
-    <a class="link hide-sm" href="#owners">Owners</a>
-    <a class="link hide-sm" href="#trust">Trust</a>
-    <a class="link" href="start/">Get started</a>
-    <a class="link" href="#download">Download</a>
-    <span class="sp"></span>
-    <button id="theme" type="button" aria-label="Toggle light and dark">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
-    </button>
-  </div>
-</nav>
-
-<main id="main">
-<header class="hero" id="top">
-  <div class="mesh" aria-hidden="true"><i></i><i></i><i></i></div>
-  <div class="wrap">
-    <div class="eyebrow">Gryvia for Apple Silicon</div>
-    <h1>Your Macs, <em>scheduled.</em></h1>
-    <p class="lede">A multi-tenant control plane for Mac fleets. It admits and places inference, fine-tuning and benchmark jobs against each Mac's unified-memory budget, with quotas, leases, provenance and a live view of every GPU.</p>
-    <div class="cta">
-      <a class="btn primary" href="#download">Download for macOS</a>
-      <a class="btn ghost" href="start/">Get started</a>
-    </div>
-    <div class="facts"><span>macOS 15+ · Apple Silicon</span><span>Native Swift agent and app</span><span>Zero-dependency control plane</span><span>Notarized · 30-day trial</span></div>
-    <div class="hero-grid reveal" id="hero-grid" role="img" aria-label="Illustration: GPU cores lighting up in waves, as in the Live view"></div>
-  </div>
+<header class="nav">
+  <a class="brand" href="./" aria-label="Gryvia Apple home"><img src="favicon.svg" width="26" height="26" alt=""><span>Gryvia</span></a>
+  <nav aria-label="Primary"><ul><li><a href="#features">Features</a></li><li><a href="#specs">Specs</a></li><li><a href="#start">Get started</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#faq">FAQ</a></li><li><a href="start/">Guide</a></li></ul></nav>
+  <a class="btn small primary" href="https://github.com/zyvorai/gryvia-apple/releases/tag/v0.5.2">Download</a>
 </header>
+<main id="main">
+<section class="hero" aria-labelledby="top">
+  <img class="icon" src="favicon.svg" width="96" height="96" alt="Gryvia app icon">
+  <p class="eyebrow">Gryvia for Apple silicon</p>
+  <h1 id="top">Gryvia</h1>
+  <p class="tagline">Your Macs, scheduled.</p>
+  <p class="promise"><strong>A control plane for Apple silicon fleets.</strong> Memory-aware admission, quotas, live GPU cores and signed provenance in a notarized Mac app. Gryvia admits and places inference, fine-tuning and benchmark jobs against each Mac&#x27;s unified-memory budget.</p>
+  <p class="cta"><a class="btn primary" href="https://github.com/zyvorai/gryvia-apple/releases/tag/v0.5.2">Download the 30-day trial</a><a class="textlink" href="#features">Learn more</a></p>
+  <p class="fine">macOS 15 or later · Apple silicon · notarized · Free 30-day trial key: sales@zyvor.dev</p>
+  <figure class="shot hero-shot"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/img/hero-live-dark-1200.webp 1200w" sizes="(min-width:1080px) 1040px, 100vw"><img src="assets/img/hero-live-light-1200.webp" srcset="assets/img/hero-live-light-1200.webp 1200w" sizes="(min-width:1080px) 1040px, 100vw" width="1280" height="820" alt="Gryvia Live pane in the Mac app: 100 GPU cores across 2 online Macs, 52% GPU busy, the scheduling queue and per-Mac GPU core grids." fetchpriority="high" decoding="async"></picture><figcaption>The Live pane in the Mac app. Demo data on a simulated fleet, not a real one.</figcaption></figure>
+</section>
 
-<section id="story">
-  <div class="wrap">
-    <div class="eyebrow reveal">Watch it work</div>
-    <h2 class="reveal">One fleet, five views.</h2>
-    <p class="sub reveal">Scroll, or use the arrow keys on a step. Every image here is the dashboard showing simulated fleet data.</p>
-    <div class="story" id="story-root">
-      <div class="story-steps" role="group" aria-label="Feature walkthrough">
-        <article class="step" data-step="0" tabindex="0" aria-label="Step 1 of 5: Every Mac, counted."><h3>Every Mac, counted.</h3><p>GPU cores and measured busy percentage straight from macOS, memory reservations by job, and the scheduler's reasoning as it happens.</p><figure class="step-img window"><div class="bar"><i></i><i></i><i></i><span>Gryvia</span></div><picture><img class="light" src="img/live-light.jpg" alt="Live view: GPU cores, reservations and scheduling flow (light, simulated fleet)" width="1440" height="900" loading="lazy"><img class="dark" src="img/live-dark.jpg" alt="Live view: GPU cores, reservations and scheduling flow (dark, simulated fleet)" width="1440" height="900" loading="lazy"></picture></figure></article>
-        <article class="step" data-step="1" tabindex="0" aria-label="Step 2 of 5: Models, measured."><h3>Models, measured.</h3><p>Onboard from Hugging Face with a size cap and SHA-256, then benchmark and evaluate on any Mac. Throughput is shown against your fastest model.</p><figure class="step-img window"><div class="bar"><i></i><i></i><i></i><span>Gryvia</span></div><picture><img class="light" src="img/models-light.jpg" alt="Model hub: status, throughput, evaluations and provenance (light, simulated fleet)" width="1440" height="900" loading="lazy"><img class="dark" src="img/models-dark.jpg" alt="Model hub: status, throughput, evaluations and provenance (dark, simulated fleet)" width="1440" height="900" loading="lazy"></picture></figure></article>
-        <article class="step" data-step="2" tabindex="0" aria-label="Step 3 of 5: Fine-tune with the loss in view."><h3>Fine-tune with the loss in view.</h3><p>MLX LoRA runs report train and validation loss as they go; the best checkpoint is marked, and the adapter keeps its lineage.</p><figure class="step-img window"><div class="bar"><i></i><i></i><i></i><span>Gryvia</span></div><picture><img class="light" src="img/training-light.jpg" alt="Training: live loss chart and runs (light, simulated fleet)" width="1440" height="900" loading="lazy"><img class="dark" src="img/training-dark.jpg" alt="Training: live loss chart and runs (dark, simulated fleet)" width="1440" height="900" loading="lazy"></picture></figure></article>
-        <article class="step" data-step="3" tabindex="0" aria-label="Step 4 of 5: Sweep a grid, keep the best."><h3>Sweep a grid, keep the best.</h3><p>One fine-tune fans out over learning rates, LoRA layers and batch sizes as ordinary queued jobs, so quotas and owner policy still apply. Runs are ranked by validation loss and the best adapter is marked.</p><figure class="step-img window"><div class="bar"><i></i><i></i><i></i><span>Gryvia</span></div><picture><img class="light" src="img/sweep-light.jpg" alt="Sweep: a grid of fine-tunes ranked by validation loss (light, simulated fleet)" width="1440" height="900" loading="lazy"><img class="dark" src="img/sweep-dark.jpg" alt="Sweep: a grid of fine-tunes ranked by validation loss (dark, simulated fleet)" width="1440" height="900" loading="lazy"></picture></figure></article>
-        <article class="step" data-step="4" tabindex="0" aria-label="Step 5 of 5: Owners stay in control."><h3>Owners stay in control.</h3><p>Each Mac chooses when it may run fleet work: always, only when its owner is away, or paused, with battery and call guards.</p><figure class="step-img window"><div class="bar"><i></i><i></i><i></i><span>Gryvia</span></div><picture><img class="light" src="img/fleet-light.jpg" alt="Fleet: owner policy and whether each Mac is accepting work (light, simulated fleet)" width="1440" height="900" loading="lazy"><img class="dark" src="img/fleet-dark.jpg" alt="Fleet: owner policy and whether each Mac is accepting work (dark, simulated fleet)" width="1440" height="900" loading="lazy"></picture></figure></article>
-      </div>
-      <div class="story-stage">
-        <div class="window">
-          <div class="bar"><i></i><i></i><i></i><span>Gryvia · simulated fleet</span></div>
-          <div class="stage-imgs">
-            <picture class="shot on" data-step=0><img class="light" src="img/live-light.jpg" alt="Live view: GPU cores, reservations and scheduling flow (light, simulated fleet)" width="1440" height="900"><img class="dark" src="img/live-dark.jpg" alt="Live view: GPU cores, reservations and scheduling flow (dark, simulated fleet)" width="1440" height="900"></picture>
-            <picture class="shot" data-step=1><img class="light" src="img/models-light.jpg" alt="Model hub: status, throughput, evaluations and provenance (light, simulated fleet)" width="1440" height="900" loading="lazy"><img class="dark" src="img/models-dark.jpg" alt="Model hub: status, throughput, evaluations and provenance (dark, simulated fleet)" width="1440" height="900" loading="lazy"></picture>
-            <picture class="shot" data-step=2><img class="light" src="img/training-light.jpg" alt="Training: live loss chart and runs (light, simulated fleet)" width="1440" height="900" loading="lazy"><img class="dark" src="img/training-dark.jpg" alt="Training: live loss chart and runs (dark, simulated fleet)" width="1440" height="900" loading="lazy"></picture>
-            <picture class="shot" data-step=3><img class="light" src="img/sweep-light.jpg" alt="Sweep: a grid of fine-tunes ranked by validation loss (light, simulated fleet)" width="1440" height="900" loading="lazy"><img class="dark" src="img/sweep-dark.jpg" alt="Sweep: a grid of fine-tunes ranked by validation loss (dark, simulated fleet)" width="1440" height="900" loading="lazy"></picture>
-            <picture class="shot" data-step=4><img class="light" src="img/fleet-light.jpg" alt="Fleet: owner policy and whether each Mac is accepting work (light, simulated fleet)" width="1440" height="900" loading="lazy"><img class="dark" src="img/fleet-dark.jpg" alt="Fleet: owner policy and whether each Mac is accepting work (dark, simulated fleet)" width="1440" height="900" loading="lazy"></picture>
-          </div>
-        </div>
-        <p class="note demo-label">Simulated fleet data, not a customer fleet.</p>
-      </div>
-    </div>
+<section class="band" aria-label="Overview">
+  <h2>Several Macs, several people, one queue.</h2>
+  <p>Gryvia decides which whole job runs on which Mac, in what order, and under whose quota.</p>
+</section>
+
+<div id="features">
+<h2 class="sr">Features</h2>
+<section class="feature" id="live" aria-labelledby="h-live"><div class="grid"><div class="copy"><p class="eyebrow">Live</p><h3 id="h-live">Every Mac, counted.</h3><p>GPU cores and measured busy percentage straight from macOS, memory reservations by job, and the scheduler&#x27;s reasoning as it happens.</p><a class="textlink" href="https://github.com/zyvorai/gryvia-apple/blob/main/docs/GETTING-STARTED.md">Getting started</a></div><figure class="shot"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/img/live-dark-1200.webp 1200w" sizes="(min-width:960px) 62vw, 100vw"><img src="assets/img/live-light-1200.webp" srcset="assets/img/live-light-1200.webp 1200w" sizes="(min-width:960px) 62vw, 100vw" width="1280" height="820" alt="Gryvia Live pane: 100 GPU cores across 2 online Macs, a scheduling view with a queued fine-tune and two running jobs, and a core grid for each Mac." loading="lazy" decoding="async"></picture><figcaption>Live pane. Demo data.</figcaption></figure></div></section>
+<section class="feature flip" id="fleet" aria-labelledby="h-fleet"><div class="grid"><div class="copy"><p class="eyebrow">Fleet</p><h3 id="h-fleet">Owners stay in control.</h3><p>Each Mac chooses when it may run fleet work: always, only when its owner is away, or paused, with battery and call guards.</p><a class="textlink" href="https://github.com/zyvorai/gryvia-apple/blob/main/docs/USER-GUIDE.md">User guide</a></div><figure class="shot"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/img/fleet-dark-1200.webp 1200w" sizes="(min-width:960px) 62vw, 100vw"><img src="assets/img/fleet-light-1200.webp" srcset="assets/img/fleet-light-1200.webp 1200w" sizes="(min-width:960px) 62vw, 100vw" width="1280" height="820" alt="Gryvia Fleet pane: two online Macs, each with its GPU cores, unified memory, memory budget, an owner policy menu and a Drain button." loading="lazy" decoding="async"></picture><figcaption>Fleet pane. Demo data.</figcaption></figure></div></section>
+<section class="feature" id="models" aria-labelledby="h-models"><div class="grid"><div class="copy"><p class="eyebrow">Model hub</p><h3 id="h-models">Models, measured.</h3><p>Onboard from Hugging Face with a size cap and SHA-256, then benchmark and evaluate on any Mac.</p><a class="textlink" href="https://github.com/zyvorai/gryvia-apple/blob/main/docs/USER-GUIDE.md">User guide</a></div><figure class="shot"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/img/models-dark-1200.webp 1200w" sizes="(min-width:960px) 62vw, 100vw"><img src="assets/img/models-light-1200.webp" srcset="assets/img/models-light-1200.webp 1200w" sizes="(min-width:960px) 62vw, 100vw" width="1280" height="820" alt="Gryvia Model hub pane: three ready models with their quantisation, parameter count, size on disk and Macs, each with Benchmark, Quantise, Deploy and Copy path buttons." loading="lazy" decoding="async"></picture><figcaption>Model hub pane. Demo data.</figcaption></figure></div></section>
+<section class="feature flip" id="training" aria-labelledby="h-training"><div class="grid"><div class="copy"><p class="eyebrow">Training</p><h3 id="h-training">Fine-tune with the loss in view.</h3><p>MLX LoRA runs report train and validation loss as they go; the best checkpoint is marked, and the adapter keeps its lineage.</p></div><figure class="shot"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/img/training-dark-1200.webp 1200w" sizes="(min-width:960px) 62vw, 100vw"><img src="assets/img/training-light-1200.webp" srcset="assets/img/training-light-1200.webp 1200w" sizes="(min-width:960px) 62vw, 100vw" width="1440" height="900" alt="Gryvia web dashboard, Training: a loss chart with train and validation loss falling over 100 steps, the best validation loss marked." loading="lazy" decoding="async"></picture><figcaption>Web dashboard, Training. Demo data.</figcaption></figure></div></section>
+<section class="feature" id="sweep" aria-labelledby="h-sweep"><div class="grid"><div class="copy"><p class="eyebrow">Sweep</p><h3 id="h-sweep">Sweep a grid, keep the best.</h3><p>One fine-tune fans out over learning rates, LoRA layers and batch sizes as ordinary queued jobs, so quotas and owner policy still apply. Runs are ranked by validation loss.</p></div><figure class="shot"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/img/sweep-dark-1200.webp 1200w" sizes="(min-width:960px) 62vw, 100vw"><img src="assets/img/sweep-light-1200.webp" srcset="assets/img/sweep-light-1200.webp 1200w" sizes="(min-width:960px) 62vw, 100vw" width="1440" height="900" alt="Gryvia web dashboard, Sweep: six fine-tune runs with state, learning rate, LoRA layers, batch size and validation loss; the best run so far is highlighted." loading="lazy" decoding="async"></picture><figcaption>Web dashboard, Sweep. Demo data.</figcaption></figure></div></section>
+</div>
+
+<section class="more" aria-labelledby="more-h">
+  <h2 id="more-h">And the rest of the toolbox.</h2>
+  <div class="cards"><div class="card"><h3>One endpoint</h3><p>An OpenAI-style gateway with streaming. Deploy on one Mac or several; a request tries one other replica before returning 502, and a stream fails over only before its first byte. Replicas across two physical Macs are not yet measured.</p></div><div class="card"><h3>Fits before it runs</h3><p>Check that a model fits before you download it (the fit figure is an estimate). Open a queued job to see why it is waiting.</p></div><div class="card"><h3>Quotas and fairness</h3><p>Priorities, tenant quotas, GiB-hour budgets and fairness weights. Tenant tokens see and act only on their own jobs.</p></div><div class="card"><h3>Assistants and Shortcuts</h3><p>The MCP server is read-only by default; write tools exist only when it is started with write access. Shortcuts actions cover fleet status, a demo job and pausing a Mac.</p></div></div>
+</section>
+
+<section class="privacy" aria-labelledby="privacy-h">
+  <h2 id="privacy-h">Trust, stated plainly.</h2>
+  <div class="cards"><div class="card"><h3>Signed provenance</h3><p>Agents sign a statement for each finished job binding the job, its spec hash and its result. This is fleet-internal provenance, not a global supply-chain guarantee.</p></div><div class="card"><h3>Outbound only</h3><p>Agents poll your control plane outbound. Nothing is sent to Zyvor. Models are downloaded only from huggingface.co or hf.co, with a size cap and a recorded SHA-256.</p></div><div class="card"><h3>No sandbox</h3><p>Runtimes are not sandboxed, so enrol only Macs you would let an admin run code on.</p></div></div>
+</section>
+
+<section class="specs" id="specs" aria-labelledby="specs-h">
+  <h2 id="specs-h">Specs and requirements.</h2>
+  <dl class="specs-grid"><div class="spec"><dt>Requires</dt><dd>macOS 15 or later</dd></div><div class="spec"><dt>Chip</dt><dd>Apple silicon</dd></div><div class="spec"><dt>Build</dt><dd>Signed and notarized<small>Developer ID signed and notarized.</small></dd></div><div class="spec"><dt>Version</dt><dd>0.5.2<small>Free 30-day trial key: sales@zyvor.dev</small></dd></div><div class="spec"><dt>Runtimes</dt><dd>llama.cpp, MLX, Core ML<small>Wrappers ship in the app; runtimes are enabled per Mac.</small></dd></div><div class="spec"><dt>Data</dt><dd>Agents poll outbound<small>Nothing is sent to Zyvor.</small></dd></div></dl>
+  <div class="limit" role="note"><h3>Honest limits</h3><p>One GPU per Mac; GPU utilisation is device-wide, not per job; reservations are admission bookkeeping, not isolation; energy is an estimate; training is single-Mac LoRA. Replicas across two physical Macs are not yet measured. There is no sandbox around runtimes. See <a href="https://github.com/zyvorai/gryvia-apple/blob/main/SECURITY.md">SECURITY.md</a>.</p></div>
+</section>
+
+<section class="steps" id="start" aria-labelledby="steps-h">
+  <h2 id="steps-h">Get started in three steps.</h2>
+  <ol><li><h3>Download</h3><p>Get <code>Gryvia-0.5.2.dmg</code> and its <code>.sha256</code> checksum from the release page. The DMG is Developer ID signed and notarized.</p></li><li><h3>Verify and install</h3><p>Check the download with <code>shasum -a 256 -c</code>, open the DMG and drag <b>Gryvia.app</b> to Applications. Paste an admin token once; it goes to your login Keychain.</p></li><li><h3>Add a Mac</h3><p>Use <b>Add a Mac</b> to create a single-use join code (valid 15 minutes) and enter it on the new Mac. Press <b>Run demo job</b> to see admission, a lease and a result.</p></li></ol>
+  <div class="sha">
+    <p>Gryvia 0.5.2 for Mac · SHA-256</p>
+    <pre><code id="sha">a1e406d73bffd4492f4876f577b498ffc4bb0a1a26b46d71775ae06dd4d8251d</code></pre>
+    <p>Verify: <code>echo "a1e406d73bffd4492f4876f577b498ffc4bb0a1a26b46d71775ae06dd4d8251d Gryvia-0.5.2.dmg" | shasum -a 256 -c</code></p>
+  </div>
+  <p class="cta"><a class="btn primary" href="https://github.com/zyvorai/gryvia-apple/releases/download/v0.5.2/Gryvia-0.5.2.dmg">Download Gryvia-0.5.2.dmg</a><a class="textlink" href="https://github.com/zyvorai/gryvia-apple/releases/tag/v0.5.2">Release page</a><a class="textlink" href="start/">Install guide</a></p>
+</section>
+
+<section class="pricing" id="pricing" aria-labelledby="pricing-h">
+  <div class="inner wide">
+  <h2 id="pricing-h" style="text-align:left">Try it free for 30 days. Pay to run it for real work.</h2>
+  <p class="lead">Free 30-day trial key: sales@zyvor.dev. Running it for real work, at home or in a business, needs a plan, and the lowest plan is for one person. Every plan includes the same Developer ID signed and notarized build and a GST invoice.</p>
+<div class="plans"><div class="plan"><h3>Personal</h3><p class="price">₹4,299</p><p class="per">one-time incl. GST</p><p class="for">One person, no business use.</p><p class="cta"><a class="btn primary" href="https://rzp.io/rzp/7A92MBZr" rel="noopener">Buy Personal</a></p></div><div class="plan"><h3>Solo / small team</h3><p class="price">₹4,999</p><p class="per">per year incl. GST</p><p class="for">Business use, up to 5 Macs. One legal entity.</p><p class="cta"><a class="btn primary" href="https://rzp.io/rzp/XcUsxE2" rel="noopener">Buy Solo</a></p></div><div class="plan"><h3>Team</h3><p class="price">₹19,999</p><p class="per">per year incl. GST</p><p class="for">Business use, up to 25 Macs. One legal entity.</p><p class="cta"><a class="btn primary" href="https://rzp.io/rzp/argeq3h" rel="noopener">Buy Team</a></p></div></div>
+<p class="fine">More than 25 Macs or several entities: custom terms and support, write to <a href="mailto:sales@zyvor.dev">sales@zyvor.dev</a>. No redistribution or resale. Business plans are invoiced for now: write to sales@zyvor.dev and you get a GST invoice and a download link. This is a plain-language summary; the <a href="https://github.com/zyvorai/gryvia-apple/blob/main/LICENSE">LICENSE</a> file is what counts, and it applies to versions after v0.4.0 (v0.4.0 and earlier keep their original personal-use grant). <a href="https://github.com/zyvorai/gryvia-apple/blob/main/docs/COMMERCIAL-LICENSE.md">Licence terms</a> (draft). More at <a href="https://zyvor.dev/buy">zyvor.dev/buy</a>.</p>
   </div>
 </section>
 
-<section id="who">
-  <div class="wrap">
-    <div class="eyebrow reveal">Who it is for</div>
-    <h2 class="reveal">If you own more than one Mac that can run models, this is for you.</h2>
-    <div class="grid g3" style="margin-top:28px">
-      <div class="card reveal"><h3>A small AI team with a Mac rack</h3><p>Several minis and Studios, several people, one queue. Quotas and fairness stop one fine-tune from starving everyone else, and the gateway gives apps a single endpoint.</p></div>
-      <div class="card reveal"><h3>A lab sharing a few machines</h3><p>Reserve unified memory per job, see which Mac is hot or throttling, and keep a signed record of which Mac produced which model.</p></div>
-      <div class="card reveal"><h3>One developer, a MacBook and a mini</h3><p>Let the mini do the overnight runs and serve the model, and let the MacBook stay yours: owner-aware policy yields the moment you are back.</p></div>
-    </div>
-  </div>
-</section>
-
-<section id="new">
-  <div class="wrap">
-    <div class="eyebrow reveal"><span class="badge-new">New in 0.4</span></div>
-    <h2 class="reveal">Serve from more than one Mac. Free memory on its own.</h2>
-    <p class="sub reveal">One model can now run on several Macs behind the same endpoint, and idle deployments can stop themselves. Both are opt-in, and both are honest about what is not measured yet.</p>
-    <div class="new-grid">
-      <figure class="diagram reveal">
-        <svg viewBox="0 0 520 220" role="img" aria-labelledby="rep-t rep-d">
-          <title id="rep-t">Requests spread over two replicas, with one failover</title>
-          <desc id="rep-d">Requests leave the gateway toward two Macs. One request to the lower Mac fails in red and is retried on the upper Mac in green.</desc>
-          <rect class="d-card" x="14" y="80" width="110" height="60" rx="14"/><text class="d-text" x="69" y="116" text-anchor="middle">Gateway</text>
-          <rect class="d-card" x="370" y="22" width="130" height="62" rx="14"/><text class="d-text" x="435" y="50" text-anchor="middle">mini-01</text><text class="d-small" x="435" y="68" text-anchor="middle">replica</text>
-          <rect class="d-card" x="370" y="136" width="130" height="62" rx="14"/><text class="d-text" x="435" y="164" text-anchor="middle">mini-02</text><text class="d-small" x="435" y="182" text-anchor="middle">replica</text>
-          <g transform="translate(130 110)"><circle class="req" r="7"/><circle class="req r2 to-b" r="7"/><circle class="req fail" r="7"/><circle class="retry" r="7"/></g>
-        </svg>
-        <figcaption><strong>Replicas.</strong> <code>gryvia deploy MODEL --node A --node B</code>. Least-busy routing; one retry on another replica before the first byte. Not yet measured across two physical Macs.</figcaption>
-      </figure>
-      <figure class="diagram reveal">
-        <svg viewBox="0 0 520 220" role="img" aria-labelledby="idl-t idl-d">
-          <title id="idl-t">A model with no traffic is stopped and its memory freed</title>
-          <desc id="idl-d">A bar fills as a model sits idle. When it reaches the window the memory block fades and an evicted tag appears.</desc>
-          <text class="d-text" x="20" y="40">llama-3.2-1b</text>
-          <rect class="d-box" x="20" y="60" width="480" height="18" rx="9"/>
-          <rect class="d-accent idle-bar" x="20" y="60" width="480" height="18" rx="9"/>
-          <text class="d-small" x="20" y="100">no gateway traffic</text><text class="d-small" x="500" y="100" text-anchor="end">idle window</text>
-          <g class="idle-mem"><rect class="d-accent" x="20" y="130" width="150" height="46" rx="12"/><text x="95" y="158" text-anchor="middle" fill="#fff" font-weight="700" font-size="14">4 GiB reserved</text></g>
-          <g class="idle-tag"><rect x="220" y="130" width="200" height="46" rx="12" fill="var(--green)"/><text x="320" y="158" text-anchor="middle" fill="#fff" font-weight="700" font-size="14">evicted · memory freed</text></g>
-        </svg>
-        <figcaption><strong>Auto idle eviction.</strong> Opt-in setting, off by default. The model stays ready and is not redeployed for you.</figcaption>
-      </figure>
-    </div>
-    <div class="cta reveal" style="margin-top:28px"><a class="btn primary" href="start/">Get started</a></div>
-  </div>
-</section>
-
-<section id="specs" class="alt">
-  <div class="wrap">
-    <div class="eyebrow reveal">What was measured</div>
-    <h2 class="reveal">Verified on two Macs. Honest about the rest.</h2>
-    <div class="grid g4 specs">
-      <div class="spec reveal"><span class="big">8 · 12</span><h3>GPU cores read from macOS</h3><p>Core count and utilisation come from the IORegistry (<code>AGXAccelerator</code>, no sudo). Matched against <code>ioreg</code> on a dev Mac (M4, 8 cores, macOS 27.2) and a Mac mini (12 cores, macOS 27.0).</p></div>
-      <div class="spec reveal"><span class="big">59</span><h3>Python unit tests</h3><p>Passed on both Macs in the 14 October 2026 run. Native agent built and XCTested on the dev Mac; the mini ran its agent smoke test.</p></div>
-      <div class="spec reveal"><span class="big">1</span><h3>GPU per Mac</h3><p>GPU utilisation is the whole Mac's load, including other apps, not per job. Reservations are admission bookkeeping, not isolation.</p></div>
-      <div class="spec reveal"><span class="big">Not yet</span><h3>Unmeasured or unverified</h3><p>In that run: Metal, MLX and llama runtimes, GPU throughput and isolation. The energy helper was not run on real hardware.</p></div>
-    </div>
-    <p class="note reveal">Figures are from a dated validation run on 2026-10-14; results of later single runs are in the table below. Screenshots on this page show simulated fleet data.</p>
-  </div>
-</section>
-
-<section id="visible">
-  <div class="wrap grid g2" style="align-items:center">
-    <div class="reveal">
-      <div class="eyebrow">See the hardware</div>
-      <h2>One GPU per Mac, made visible.</h2>
-      <p class="sub" style="margin-bottom:18px">Every Apple Silicon Mac has exactly one GPU with many cores. Gryvia reads the core count and the measured busy percentage straight from macOS, so the fleet's GPUs are counted and shown, not guessed.</p>
-      <p class="note">Utilisation is the whole Mac's GPU load, including other apps. Reservations are admission bookkeeping, not a live memory meter. The product says so wherever it shows them.</p>
-    </div>
-    <div class="card reveal" aria-label="Animated GPU core grid, illustrative">
-      <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px"><strong>Mac Studio · 80 GPU cores</strong><span style="font:700 34px var(--rounded)" id="cores-pct">62%</span></div>
-      <div class="cores-demo" id="cores-demo"></div>
-      <p class="note" style="margin-top:12px">Illustration. In the app each cell is a real GPU core, lit in proportion to the measured busy percentage.</p>
-    </div>
-  </div>
-</section>
-
-<section id="how" class="alt">
-  <div class="wrap">
-    <div class="eyebrow reveal">How it works</div>
-    <h2 class="reveal">Who gets which Mac, when, and within what limits.</h2>
-    <p class="sub reveal">Tools like exo and MLX distributed answer how to split one model across machines. Gryvia answers the operational question for a fleet: which job runs where, in what order, under whose quota.</p>
-    <figure class="diagram reveal">
-      <svg viewBox="0 0 1000 400" role="img" aria-labelledby="d1t d1d">
-        <title id="d1t">Scheduling flow</title><desc id="d1d">Jobs wait in a queue, pass an admission gate that checks priority, fairness and fit, and then run on a Mac.</desc>
-        <text x="40" y="34" class="d-small">QUEUE</text><text x="360" y="34" class="d-small">ADMISSION</text><text x="680" y="34" class="d-small">MACS</text>
-        <rect x="30" y="46" width="240" height="320" rx="18" class="d-box"/>
-        <rect x="350" y="46" width="270" height="320" rx="18" class="d-card" stroke-dasharray="6 6"/>
-        <rect x="670" y="46" width="300" height="320" rx="18" class="d-box"/>
-        <g transform="translate(0,0)">
-          <rect x="50" y="70" width="200" height="46" rx="12" fill="#a550e0" class="flow-chip a" style="--dy:0px"/><text x="64" y="90" class="d-text" fill="#fff" style="fill:#fff">Fine-tune LoRA</text><text x="64" y="106" class="d-small" style="fill:#ffffffcc">40 GiB · prio 60</text>
-        </g>
-        <g><rect x="50" y="132" width="200" height="46" rx="12" fill="#ff9f0a" class="flow-chip b" style="--dy:0px"/><text x="64" y="152" class="d-text" style="fill:#fff">Evaluate adapter</text><text x="64" y="168" class="d-small" style="fill:#ffffffcc">6 GiB · prio 50</text></g>
-        <g><rect x="50" y="194" width="200" height="46" rx="12" fill="#30d158" class="flow-chip c" style="--dy:0px"/><text x="64" y="214" class="d-text" style="fill:#fff">Benchmark 1B Q4</text><text x="64" y="230" class="d-small" style="fill:#ffffffcc">2 GiB · prio 55</text></g>
-        <text x="50" y="290" class="d-muted">Waiting jobs show the reason:</text>
-        <text x="50" y="310" class="d-small">“node memory reservation budget”</text>
-        <g class="d-text">
-          <text x="380" y="96" class="d-text">1  Priority</text><text x="380" y="114" class="d-muted">higher first</text>
-          <text x="380" y="164" class="d-text">2  Fairness</text><text x="380" y="182" class="d-muted">tenant share of its quota, weighted</text>
-          <text x="380" y="232" class="d-text">3  Fit</text><text x="380" y="250" class="d-muted">runtime, node selector, memory budget,</text><text x="380" y="266" class="d-muted">thermal and owner policy</text>
-          <text x="380" y="322" class="d-small">Every decision is recorded with its reason.</text>
-        </g>
-        <path d="M270 140 H350 M620 140 H670" class="d-line" marker-end="url(#ar)"/>
-        <defs><marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="currentColor" style="fill:var(--muted)"/></marker></defs>
-        <g>
-          <rect x="690" y="66" width="260" height="130" rx="14" class="d-card"/><text x="706" y="92" class="d-text">mini-01 · M4 Pro</text><text x="706" y="110" class="d-small">20 GPU cores · 24 GiB</text>
-          <g>
-            <rect x="706" y="124" width="14" height="14" rx="3" class="d-core on"/><rect x="724" y="124" width="14" height="14" rx="3" class="d-core on"/><rect x="742" y="124" width="14" height="14" rx="3" class="d-core on"/><rect x="760" y="124" width="14" height="14" rx="3" class="d-core on"/><rect x="778" y="124" width="14" height="14" rx="3" class="d-core"/><rect x="796" y="124" width="14" height="14" rx="3" class="d-core"/><rect x="814" y="124" width="14" height="14" rx="3" class="d-core"/><rect x="832" y="124" width="14" height="14" rx="3" class="d-core"/><rect x="850" y="124" width="14" height="14" rx="3" class="d-core"/><rect x="868" y="124" width="14" height="14" rx="3" class="d-core"/>
-          </g>
-          <rect x="706" y="156" width="228" height="10" rx="5" class="d-core"/><rect x="706" y="156" width="82" height="10" rx="5" fill="#30d158"/><rect x="800" y="154" width="2" height="14" style="fill:var(--text)"/>
-          <text x="706" y="184" class="d-small">8 GiB reserved by 1 job · 3 GiB in use</text>
-        </g>
-        <g>
-          <rect x="690" y="212" width="260" height="130" rx="14" class="d-card"/><text x="706" y="238" class="d-text">studio-01 · M3 Ultra</text><text x="706" y="256" class="d-small">80 GPU cores · 96 GiB</text>
-          <rect x="706" y="274" width="228" height="10" rx="5" class="d-core"/><rect x="706" y="274" width="140" height="10" rx="5" fill="#a550e0"/>
-          <text x="706" y="304" class="d-small">40 GiB reserved by 1 job</text><text x="706" y="324" class="d-small pulse">Fine-tune LoRA · running</text>
-        </g>
-      </svg>
-      <figcaption>Simplified flow. In the product the same lanes animate from live state over a server stream.</figcaption>
-    </figure>
-    <div class="grid g3" style="margin-top:22px">
-      <div class="card reveal"><div class="ico"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10"/></svg></div><h3>Admission, not hope</h3><p>Reservations against each Mac's unified-memory budget, tenant quotas and weights, priorities, dependencies and retries, decided in one SQLite transaction.</p></div>
-      <div class="card reveal"><div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Leases that fail safe</h3><p>Workers hold short renewable leases. A stale worker cannot finish a job it lost, and a cancelled job keeps its reservation until the process has stopped.</p></div>
-      <div class="card reveal"><div class="ico"><svg viewBox="0 0 24 24"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg></div><h3>Observable</h3><p>Live GPU cores, scheduler decisions with reasons, Prometheus metrics, per-tenant usage and energy estimates, and an audit trail.</p></div>
-    </div>
-    <div class="grid g3" style="margin-top:18px">
-      <div class="card reveal"><div class="ico"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 15l3-3 2 2 3-4"/></svg></div><h3>Fits before it runs</h3><p><code>gryvia fit</code> estimates weights plus KV cache for every Mac. Admission also checks macOS memory pressure and Metal's working set, and critical pressure asks running work to stop.</p></div>
-      <div class="card reveal"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 20V8M7 12l5-5 5 5"/><path d="M5 4h14"/></svg></div><h3>No inbound ports</h3><p>Model servers stay on their Mac's loopback. The agent relays requests and SSE streams over its own outbound, lease-bound connection, and your platform token never reaches the model server.</p></div>
-      <div class="card reveal"><div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v4M9 16h6"/></svg></div><h3>Idle replicas, scaled to zero</h3><p>List deployments nobody has called within a window, then stop them to free their memory reservation. You trigger it; nothing evicts on its own.</p></div>
-    </div>
-  </div>
-</section>
-
-<section id="architecture">
-  <div class="wrap">
-    <div class="eyebrow reveal">Architecture</div>
-    <h2 class="reveal">A small control plane and a native agent.</h2>
-    <figure class="diagram reveal">
-      <svg viewBox="0 0 1000 380" role="img" aria-labelledby="d2t d2d">
-        <title id="d2t">Architecture</title><desc id="d2d">Clients talk to the control plane; native agents on each Mac claim jobs and run local runtimes on the GPU.</desc>
-        <rect x="30" y="30" width="190" height="320" rx="18" class="d-box"/><text x="46" y="58" class="d-small">CLIENTS</text>
-        <rect x="46" y="74" width="158" height="44" rx="10" class="d-card"/><text x="60" y="101" class="d-text">Web dashboard</text>
-        <rect x="46" y="130" width="158" height="44" rx="10" class="d-card"/><text x="60" y="157" class="d-text">SwiftUI app</text>
-        <rect x="46" y="186" width="158" height="44" rx="10" class="d-card"/><text x="60" y="213" class="d-text">CLI</text>
-        <rect x="46" y="242" width="158" height="44" rx="10" class="d-card"/><text x="60" y="269" class="d-text">MCP · Shortcuts</text>
-        <rect x="290" y="30" width="280" height="320" rx="18" class="d-card" style="stroke:var(--accent)"/>
-        <text x="306" y="58" class="d-small">CONTROL PLANE · PYTHON, STANDARD LIBRARY, SQLITE</text>
-        <text x="306" y="96" class="d-text">Admission &amp; placement</text><text x="306" y="114" class="d-muted">priority · fairness · fit · owner policy</text>
-        <text x="306" y="150" class="d-text">Leases &amp; dependencies</text><text x="306" y="168" class="d-muted">retries · yield and resume</text>
-        <text x="306" y="204" class="d-text">Model hub</text><text x="306" y="222" class="d-muted">onboard · benchmark · evaluate · fuse</text>
-        <text x="306" y="258" class="d-text">Provenance</text><text x="306" y="276" class="d-muted">pinned keys · verified chains</text>
-        <text x="306" y="312" class="d-text">Gateway &amp; metrics</text><text x="306" y="330" class="d-muted">OpenAI-style, streaming · Prometheus</text>
-        <rect x="640" y="30" width="330" height="320" rx="18" class="d-box"/><text x="656" y="58" class="d-small">EACH MAC</text>
-        <rect x="656" y="74" width="298" height="70" rx="12" class="d-card"/><text x="672" y="100" class="d-text">gryvia-agent (Swift)</text><text x="672" y="120" class="d-muted">hardware · presence · signs attestations</text>
-        <rect x="656" y="160" width="140" height="46" rx="10" class="d-card"/><text x="670" y="188" class="d-text">llama.cpp</text>
-        <rect x="814" y="160" width="140" height="46" rx="10" class="d-card"/><text x="828" y="188" class="d-text">MLX</text>
-        <rect x="656" y="218" width="140" height="46" rx="10" class="d-card"/><text x="670" y="246" class="d-text">Core ML</text>
-        <rect x="814" y="218" width="140" height="46" rx="10" class="d-card"/><text x="828" y="246" class="d-text">Your runtime</text>
-        <rect x="656" y="284" width="298" height="46" rx="12" class="d-accent"/><text x="672" y="313" class="d-text" style="fill:#fff">Apple Silicon GPU · unified memory</text>
-        <path d="M204 140 H290 M570 110 H640" class="d-line" marker-end="url(#ar)"/>
-        <path d="M640 170 H570" class="d-line" marker-end="url(#ar)" stroke-dasharray="4 4"/>
-      </svg>
-      <figcaption>Agents poll the control plane outbound; nothing connects in to a Mac. Runtimes are chosen locally by absolute path, never from a remote command string.</figcaption>
-    </figure>
-  </div>
-</section>
-
-<section id="models" class="alt">
-  <div class="wrap">
-    <div class="eyebrow reveal">Model workbench</div>
-    <h2 class="reveal">From a Hugging Face file to a streaming endpoint.</h2>
-    <p class="sub reveal">Every step is a scheduled job on a Mac of your choice, with the same quotas, logs and audit trail.</p>
-    <figure class="diagram reveal">
-      <svg viewBox="0 0 1000 250" role="img" aria-labelledby="d3t d3d">
-        <title id="d3t">Model lifecycle</title><desc id="d3d">Onboard, benchmark, evaluate, fine-tune, fuse, deploy, stream.</desc>
-        <g id="d3nodes">
-          <rect x="14" y="60" width="124" height="110" rx="16" class="d-card"/><text x="76" y="96" text-anchor="middle" class="d-text">Onboard</text><text x="76" y="118" text-anchor="middle" class="d-small">size cap</text><text x="76" y="134" text-anchor="middle" class="d-small">SHA-256</text><text x="76" y="150" text-anchor="middle" class="d-small">host allowlist</text>
-          <rect x="152" y="60" width="124" height="110" rx="16" class="d-card"/><text x="214" y="96" text-anchor="middle" class="d-text">Benchmark</text><text x="214" y="118" text-anchor="middle" class="d-small">llama-bench</text><text x="214" y="134" text-anchor="middle" class="d-small">tokens / s</text>
-          <rect x="290" y="60" width="124" height="110" rx="16" class="d-card"/><text x="352" y="96" text-anchor="middle" class="d-text">Evaluate</text><text x="352" y="118" text-anchor="middle" class="d-small">your prompt suite</text><text x="352" y="134" text-anchor="middle" class="d-small">pass / fail</text>
-          <rect x="428" y="60" width="124" height="110" rx="16" class="d-card"/><text x="490" y="96" text-anchor="middle" class="d-text">Fine-tune</text><text x="490" y="118" text-anchor="middle" class="d-small">MLX LoRA</text><text x="490" y="134" text-anchor="middle" class="d-small">live loss</text>
-          <rect x="566" y="60" width="124" height="110" rx="16" class="d-card"/><text x="628" y="96" text-anchor="middle" class="d-text">Fuse</text><text x="628" y="118" text-anchor="middle" class="d-small">adapter into</text><text x="628" y="134" text-anchor="middle" class="d-small">a model</text>
-          <rect x="704" y="60" width="124" height="110" rx="16" class="d-card"/><text x="766" y="96" text-anchor="middle" class="d-text">Deploy</text><text x="766" y="118" text-anchor="middle" class="d-small">llama-server or</text><text x="766" y="134" text-anchor="middle" class="d-small">mlx_lm.server</text>
-          <rect x="842" y="60" width="144" height="110" rx="16" class="d-accent"/><text x="914" y="96" text-anchor="middle" class="d-text" style="fill:#fff">Stream</text><text x="914" y="118" text-anchor="middle" class="d-small" style="fill:#ffffffcc">gateway · SSE</text><text x="914" y="134" text-anchor="middle" class="d-small" style="fill:#ffffffcc">playground</text>
-        </g>
-        <path d="M138 115 H152 M276 115 H290 M414 115 H428 M552 115 H566 M690 115 H704 M828 115 H842" class="d-line" marker-end="url(#ar)"/>
-        <text x="14" y="212" class="d-muted">Workflows chain these with dependencies: a step starts only after the ones it depends on succeed.</text>
-      </svg>
-    </figure>
-    <h3 style="margin:34px 0 12px">Measured on one Mac mini (Apple M6, 12 GPU cores, 16 GiB)</h3>
-    <div class="tablewrap reveal">
-      <table>
-        <thead><tr><th>Run</th><th>Result</th><th>Notes</th></tr></thead>
-        <tbody>
-          <tr><td>Llama-3.2-1B-Instruct Q4_K_M, llama-bench</td><td class="n">5,999 tok/s prompt · 151 tok/s generation</td><td>512 prompt / 128 generated tokens, 3 repetitions, idle Mac, one run</td></tr>
-          <tr><td>Same model through the gateway, streaming</td><td class="n">0.28 s to first token</td><td>120 chunks in 1.07 s</td></tr>
-          <tr><td>Idle eviction, live: tiny GGUF on llama-server behind the agent relay</td><td class="n">Kept while busy · evicted after 75 s idle</td><td>Serve job cancelled, endpoint cleared, process exited; later requests get 503. One run, macOS 27.2</td></tr>
-          <tr><td>MLX LoRA on Llama-3.2-1B-Instruct-4bit, 120 iterations</td><td class="n">3 / 72 → 71 / 72 held-out phrasings</td><td>24 facts × 5 stems; unseen stems; keyword scoring; one seed. With self-rehearsal 65 / 72 and no regressions on general questions (23 / 24)</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="note" style="margin-top:12px">Small data and a single seed: these show the pipeline works end to end on real hardware, not general fine-tuning quality.</p>
-  </div>
-</section>
-
-<section id="owners">
-  <div class="wrap">
-    <div class="eyebrow reveal">Built for Macs people also use</div>
-    <h2 class="reveal">Run when the owner is away. Yield the moment they return.</h2>
-    <p class="sub reveal">A desktop Mac is not a server. Each Mac has an owner policy: always, only when idle, or paused, with battery and Low Power Mode rules and a call guard. Idle detection reads only the time since the last input event, lock and display state, power source and whether an input device is running. No window titles, keystrokes or app names.</p>
-    <figure class="diagram reveal">
-      <svg viewBox="0 0 1000 210" role="img" aria-labelledby="d4t d4d">
-        <title id="d4t">Idle-time harvesting timeline</title><desc id="d4d">The owner works, steps away, a job runs, the owner returns, the job yields and is requeued without using a retry, then resumes when the Mac is idle again.</desc>
-        <rect x="30" y="40" width="190" height="42" rx="10" fill="#8e8e93"/><text x="46" y="66" class="d-text" style="fill:#fff">Owner working</text>
-        <rect x="220" y="40" width="330" height="42" rx="10" class="d-accent"/><text x="236" y="66" class="d-text" style="fill:#fff">Idle for 5 minutes → job runs</text>
-        <rect x="550" y="40" width="110" height="42" rx="10" fill="#ff9f0a"/><text x="562" y="66" class="d-text" style="fill:#fff">Yields</text>
-        <rect x="660" y="40" width="130" height="42" rx="10" fill="#8e8e93"/><text x="672" y="66" class="d-text" style="fill:#fff">Owner working</text>
-        <rect x="790" y="40" width="180" height="42" rx="10" class="d-accent"/><text x="804" y="66" class="d-text" style="fill:#fff">Idle again → resumes</text>
-        <path d="M605 82 V120" class="d-line" marker-end="url(#ar)"/>
-        <text x="30" y="124" class="d-muted">Owner returns: the agent stops the job gracefully (SIGTERM to the whole process group).</text>
-        <text x="30" y="148" class="d-muted">The job goes back to the queue with “owner returned”; no retry is consumed; LoRA runs continue from the last saved adapter weights.</text>
-        <text x="30" y="180" class="d-small">Also: not on battery below a chosen percentage, never in Low Power Mode, not while a microphone is in use (calls).</text>
-      </svg>
-    </figure>
-  </div>
-</section>
-
-<section id="trust" class="alt">
-  <div class="wrap">
-    <div class="eyebrow reveal">Trust</div>
-    <h2 class="reveal">Know which Mac produced a model, and that its record was not altered.</h2>
-    <p class="sub reveal">Each agent has an Ed25519 identity key (CryptoKit, kept in a 0600 file). When a job finishes the agent signs a statement binding the job, its spec hash and its result. The control plane pins each node's key on first contact and verifies signatures with a small vendored verifier, then keeps a chain across download, fine-tune, fuse and quantise. A policy can refuse to deploy a model without a verified chain.</p>
-    <figure class="diagram reveal">
-      <svg viewBox="0 0 1000 200" role="img" aria-labelledby="d5t d5d">
-        <title id="d5t">Provenance chain</title><desc id="d5d">Download, fine-tune and fuse steps are each signed by the node that ran them; deploy checks the chain.</desc>
-        <rect x="20" y="40" width="200" height="110" rx="16" class="d-card"/><text x="40" y="74" class="d-text">Download</text><text x="40" y="96" class="d-small">source · revision · SHA-256</text><text x="40" y="118" class="d-small">signed by mini-01</text><circle cx="196" cy="62" r="9" fill="#30d158"/>
-        <rect x="270" y="40" width="200" height="110" rx="16" class="d-card"/><text x="290" y="74" class="d-text">Fine-tune</text><text x="290" y="96" class="d-small">base · dataset · adapter</text><text x="290" y="118" class="d-small">signed by mini-01</text><circle cx="446" cy="62" r="9" fill="#30d158"/>
-        <rect x="520" y="40" width="200" height="110" rx="16" class="d-card"/><text x="540" y="74" class="d-text">Fuse</text><text x="540" y="96" class="d-small">adapter into model</text><text x="540" y="118" class="d-small">signed by studio-01</text><circle cx="696" cy="62" r="9" fill="#30d158"/>
-        <rect x="770" y="40" width="210" height="110" rx="16" class="d-accent"/><text x="790" y="74" class="d-text" style="fill:#fff">Deploy gate</text><text x="790" y="96" class="d-small" style="fill:#ffffffcc">requireVerified: chain must</text><text x="790" y="114" class="d-small" style="fill:#ffffffcc">verify end to end</text>
-        <path d="M220 95 H270 M470 95 H520 M720 95 H770" class="d-line" marker-end="url(#ar)"/>
-        <text x="20" y="184" class="d-muted">A base model pulled by an external tool is shown as “base unattested”, never as verified.</text>
-      </svg>
-    </figure>
-    <div class="callout" style="margin-top:18px"><strong>What this is not.</strong> It is fleet-internal provenance: it shows which of your Macs ran which step and that the recorded result is unaltered. It is not a global software supply-chain guarantee, and a runtime still executes whatever an authorised user submits (there is no sandbox).</div>
-  </div>
-</section>
-
-<section id="agents">
-  <div class="wrap grid g2" style="align-items:center">
-    <div class="reveal">
-      <div class="eyebrow">For agents and automations</div>
-      <h2>Let an assistant check the fleet. You decide if it may act.</h2>
-      <p class="sub" style="margin-bottom:0">The MCP server is read-only by default. Write tools (submit, cancel, set a Mac's policy) exist only when you start it with <code>--allow-write</code>, and they run with the role of the token you give it, so a tenant token scopes an agent to one tenant. Shortcuts actions cover fleet status, a demo job and pausing a Mac.</p>
-    </div>
-    <pre class="reveal"><span class="c"># read-only MCP server over stdio (shipped inside the app)</span>
-<span class="c"># tools: gryvia_fleet · gryvia_jobs · gryvia_job_logs</span>
-<span class="c">#        gryvia_models · gryvia_results · gryvia_run_metrics</span>
-<span class="c"># with --allow-write: submit · cancel · set_node_policy</span></pre>
-  </div>
-</section>
-
-<section id="screens" class="alt">
-  <div class="wrap">
-    <div class="eyebrow reveal">The apps</div>
-    <h2 class="reveal">Web dashboard and native Mac app.</h2>
-    <div data-shot-tabs>
-    <div class="tabs" role="tablist" aria-label="Appearance">
-      <button role="tab" data-variant="light" aria-selected="true">Light</button>
-      <button role="tab" data-variant="dark" aria-selected="false">Dark</button>
-    </div>
-    <div>
-      <div class="shots" data-variant="light">
-        <figure><img loading="lazy" src="img/live-light.jpg" alt="Live view, light" width="1440" height="900"><figcaption>Live: GPU cores, reservations and the scheduling flow</figcaption></figure>
-        <figure><img loading="lazy" src="img/models-light.jpg" alt="Model hub, light" width="1440" height="900"><figcaption>Model hub: status, throughput, evaluations, provenance</figcaption></figure>
-        <figure><img loading="lazy" src="img/training-light.jpg" alt="Training with loss chart, light" width="1440" height="900"><figcaption>Training: live loss chart and runs</figcaption></figure>
-        <figure><img loading="lazy" src="img/sweep-light.jpg" alt="Hyperparameter sweep ranked by validation loss, light" width="1440" height="900"><figcaption>Sweep: a grid of fine-tunes ranked by validation loss</figcaption></figure>
-        <figure><img loading="lazy" src="img/fleet-light.jpg" alt="Fleet with owner policy, light" width="1440" height="900"><figcaption>Fleet: owner policy and whether each Mac is accepting work</figcaption></figure>
-      </div>
-      <div class="shots" data-variant="dark" hidden>
-        <figure><img loading="lazy" src="img/live-dark.jpg" alt="Live view, dark" width="1440" height="900"><figcaption>Live</figcaption></figure>
-        <figure><img loading="lazy" src="img/models-dark.jpg" alt="Model hub, dark" width="1440" height="900"><figcaption>Model hub</figcaption></figure>
-        <figure><img loading="lazy" src="img/training-dark.jpg" alt="Training, dark" width="1440" height="900"><figcaption>Training</figcaption></figure>
-        <figure><img loading="lazy" src="img/sweep-dark.jpg" alt="Sweep, dark" width="1440" height="900"><figcaption>Sweep</figcaption></figure>
-        <figure><img loading="lazy" src="img/fleet-dark.jpg" alt="Fleet, dark" width="1440" height="900"><figcaption>Fleet</figcaption></figure>
-      </div>
-    </div>
-    </div>
-    <p class="note" style="margin-top:14px">The native app mirrors these screens with a grouped sidebar, a menu-bar item to pause fleet work on this Mac, and a Dock badge for running jobs.</p>
-  </div>
-</section>
-
-<section id="macapp">
-  <div class="wrap">
-    <div class="eyebrow reveal">The Mac app</div>
-    <h2 class="reveal">A native app that explains itself.</h2>
-    <p class="sub reveal">SwiftUI, light and dark. Hero figures say what you are looking at, terms open a plain-language definition, a queued job tells you why it is waiting, and ⌘K jumps anywhere.</p>
-    <div class="macshots">
-      <figure class="macshot reveal"><div class="window"><div class="bar"><i></i><i></i><i></i><span>Gryvia for Mac</span></div><picture><img class="light" src="img/mac-live-light.jpg" alt="Live in the Mac app (light, simulated fleet)" width="1280" height="820" loading="lazy"><img class="dark" src="img/mac-live-dark.jpg" alt="Live in the Mac app (dark, simulated fleet)" width="1280" height="820" loading="lazy"></picture></div><figcaption>Live: GPU cores, measured busy percentage and the scheduling flow</figcaption></figure>
-      <figure class="macshot reveal"><div class="window"><div class="bar"><i></i><i></i><i></i><span>Gryvia for Mac</span></div><picture><img class="light" src="img/mac-fleet-light.jpg" alt="Fleet in the Mac app (light, simulated fleet)" width="1280" height="820" loading="lazy"><img class="dark" src="img/mac-fleet-dark.jpg" alt="Fleet in the Mac app (dark, simulated fleet)" width="1280" height="820" loading="lazy"></picture></div><figcaption>Fleet: each Mac, its budget, thermal state and owner policy</figcaption></figure>
-      <figure class="macshot reveal"><div class="window"><div class="bar"><i></i><i></i><i></i><span>Gryvia for Mac</span></div><picture><img class="light" src="img/mac-models-light.jpg" alt="Model hub in the Mac app (light, simulated fleet)" width="1280" height="820" loading="lazy"><img class="dark" src="img/mac-models-dark.jpg" alt="Model hub in the Mac app (dark, simulated fleet)" width="1280" height="820" loading="lazy"></picture></div><figcaption>Model hub: ready, serving and benchmarked models</figcaption></figure>
-    </div>
-    <p class="note reveal">Screenshots are rendered by the app's own <code>--snapshot</code> mode against a simulated fleet, not a real one.</p>
-  </div>
-</section>
-
-<section id="positioning">
-  <div class="wrap">
-    <div class="eyebrow reveal">Where it fits</div>
-    <h2 class="reveal">Works alongside the tools you already use.</h2>
-    <div class="tablewrap reveal">
-      <table>
-        <thead><tr><th>Tool</th><th>What it is great at</th><th>How Gryvia relates</th></tr></thead>
-        <tbody>
-          <tr><td>exo, MLX distributed</td><td>Running one large model across several Macs</td><td>Different question. A future executor integration could let Gryvia schedule such jobs.</td></tr>
-          <tr><td>Ollama, LM Studio</td><td>Simple single-machine model serving</td><td>Gryvia can sit above machines that each run a server.</td></tr>
-          <tr><td>llama.cpp, MLX</td><td>The runtimes themselves</td><td>Gryvia drives them: llama-bench, llama-server, mlx_lm lora, mlx_lm server.</td></tr>
-          <tr><td>vllm-metal and other engines</td><td>Batched serving inside one process</td><td>Engine-level; Gryvia is fleet-level.</td></tr>
-          <tr><td>Kubernetes, Nomad, Slurm</td><td>General schedulers</td><td>Gryvia adds the Apple unified-memory and owner-presence model.</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="note" style="margin-top:12px">Based on each project's public documentation as reviewed on 14 October 2026; these tools move quickly, so check them. </p>
-  </div>
-</section>
-
-<section id="download" class="alt">
-  <div class="wrap">
-    <div class="eyebrow reveal">Get it</div>
-    <h2 class="reveal">Download, try for 30 days, then choose a plan.</h2>
-    <div class="tiers" style="margin-top:28px">
-      <div class="tier reveal"><div><h3 style="margin:0 0 6px">Download Gryvia Apple 0.5.2</h3>
-        <p class="note" style="font-size:16px;margin:0 0 10px">A <strong>notarized</strong> DMG for <strong>macOS 15 or later on Apple silicon</strong>. It runs for 30 days with a free trial key: write to <a href="mailto:sales@zyvor.dev">sales@zyvor.dev</a>. Licences are at <a href="https://zyvor.dev/buy">zyvor.dev/buy</a>.</p>
-        <div class="cta" style="justify-content:flex-start"><a class="btn primary" href="https://github.com/zyvorai/gryvia-apple/releases/download/v0.5.2/Gryvia-0.5.2.dmg">Download Gryvia-0.5.2.dmg</a><a class="btn ghost" href="https://github.com/zyvorai/gryvia-apple/releases/tag/v0.5.2">Release notes</a><img src="pay-gryvia.svg" alt="Scan to buy the signed build" width="96" height="96" style="display:block;margin-top:.5rem;background:#fff;border-radius:8px"></div>
-        <pre data-copy="shasum -a 256 -c Gryvia-0.5.2.dmg.sha256" style="margin-top:14px"><span class="c"># download the .sha256 file next to the DMG, then verify</span>
-shasum -a 256 -c Gryvia-0.5.2.dmg.sha256</pre>
-        <p class="note" style="font-size:14px;margin:12px 0 0">Free 30-day trial key: sales@zyvor.dev. SHA-256: <code style="word-break:break-all">a1e406d73bffd4492f4876f577b498ffc4bb0a1a26b46d71775ae06dd4d8251d</code></p></div></div>
-      <div class="tier reveal"><div><h3 style="margin:0 0 6px">Pricing</h3>
-        <p class="note" style="font-size:16px;margin:0 0 14px"><strong>Try it free for 30 days; pay to run it for real work.</strong> Running it for real work, at home or in a business, needs a plan, and the lowest plan is for one person. Every plan includes the same Developer ID signed and notarized build and a GST invoice. This is a plain-language summary; the <a href="https://github.com/zyvorai/gryvia-apple/blob/main/LICENSE">LICENSE</a> file is what counts, and it applies to versions after v0.4.0 (v0.4.0 and earlier keep their original personal-use grant).</p>
-        <div class="grid g4 plans">
-          <div class="card plan"><h3>Personal</h3><p class="price"><strong>₹4,299</strong> <span>one-time incl. GST · about US$50</span></p><p>One person, no business use.</p><div class="cta" style="justify-content:flex-start;margin-top:14px"><a class="btn primary" href="https://rzp.io/rzp/7A92MBZr">Buy Personal</a><a class="btn" href="https://rzp.io/rzp/7A92MBZr" rel="noopener">International</a></div></div>
-          <div class="card plan"><h3>Solo / small team</h3><p class="price"><strong>₹4,999</strong> <span>per year incl. GST · about US$59</span></p><p>Business use, up to 5 Macs. One legal entity.</p><div class="cta" style="justify-content:flex-start;margin-top:14px"><a class="btn primary" href="https://rzp.io/rzp/XcUsxE2">Buy Solo</a> <a class="btn" href="mailto:sales@zyvor.dev?subject=Gryvia%20Solo%20customisation">Customise: sales@zyvor.dev</a></div></div>
-          <div class="card plan"><h3>Team</h3><p class="price"><strong>₹19,999</strong> <span>per year incl. GST · about US$239</span></p><p>Business use, up to 25 Macs. One legal entity.</p><div class="cta" style="justify-content:flex-start;margin-top:14px"><a class="btn primary" href="https://rzp.io/rzp/argeq3h">Buy Team</a> <a class="btn" href="mailto:sales@zyvor.dev?subject=Gryvia%20Team%20customisation">Customise: sales@zyvor.dev</a></div></div>
-          <div class="card plan"><h3>Larger fleets</h3><p class="price"><strong>Talk to us</strong> <span>more than 25 Macs, several entities</span></p><p>Custom terms and support.</p><div class="cta" style="justify-content:flex-start;margin-top:14px"><a class="btn ghost" href="mailto:sales@zyvor.dev?subject=Gryvia%20licence%20for%20a%20larger%20fleet">Contact sales</a></div></div>
-        </div>
-        <p class="note" style="font-size:14px;margin:12px 0 0">No redistribution or resale. Business plans are invoiced for now: write to <a href="mailto:sales@zyvor.dev">sales@zyvor.dev</a> and you get a GST invoice and a download link. <a href="https://github.com/zyvorai/gryvia-apple/blob/main/docs/COMMERCIAL-LICENSE.md">Licence terms</a> (draft).</p></div></div>
-    </div>
-  </div>
-</section>
-
-<section id="closing" class="closing">
-  <div class="wrap">
-    <h2 class="reveal">Put your Macs to work, on purpose.</h2>
-    <p class="sub reveal" style="margin-left:auto;margin-right:auto">Try it free for 30 days. Pay when you run it for real work. Signed, notarized, and honest about what is and is not measured.</p>
-    <div class="cta reveal"><a class="btn primary" href="start/">Get started</a><a class="btn ghost" href="#download">Pricing and download</a></div>
-  </div>
-</section>
-
-<section id="faq">
-  <div class="wrap" style="max-width:820px">
-    <div class="eyebrow reveal">Questions</div>
-    <h2 class="reveal">Straight answers.</h2>
-    <details><summary>Is the source code available?</summary><p>No. The Gryvia Apple source code is private. This repository holds documentation, this website and the downloads. The licence text is in <a href="https://github.com/zyvorai/gryvia-apple/blob/main/LICENSE">LICENSE</a>.</p></details>
-    <details><summary>How do I try it, and what needs a plan?</summary><p>Write to sales@zyvor.dev for a free 30-day trial key. Running it for real work, whether you are one person at home (Personal plan) or a business (Solo, Team or larger), needs a plan from <a href="https://zyvor.dev/buy">zyvor.dev/buy</a>. v0.4.0 and earlier were released with a free personal-use grant, which stays valid for those versions. The LICENSE file is the authority; ask sales@zyvor.dev if your case is unclear.</p></details>
-    <details><summary>Does it split one model across several Macs?</summary><p>No. For that, look at exo or MLX distributed. Gryvia decides which whole job runs on which Mac and under whose quota.</p></details>
-    <details><summary>Is GPU utilisation per job?</summary><p>No. It is the whole Mac's GPU load as macOS reports it, including other apps. Reservations are admission bookkeeping, and energy figures are estimates.</p></details>
-    <details><summary>Can I use a Mac that someone is also working on?</summary><p>Yes: set its policy to “only when I am away”. Work starts after the idle time you choose and yields when the owner returns. Battery, Low Power Mode and call guards apply.</p></details>
-    <details><summary>What does it send where?</summary><p>Agents poll your control plane outbound. Nothing is sent to Zyvor. Models are downloaded only from huggingface.co or hf.co, with a size cap and a recorded SHA-256.</p></details>
-    <details><summary>Do deployed models hold memory forever?</summary><p>Only until you stop them. A deployment keeps its reservation while its serve job runs. Idle eviction lists deployments with no gateway traffic in a window you choose and stops them: by hand from the dashboard, or automatically if you set <code>autoEvictIdleSeconds</code> (off by default). There is no autoscaler, and the next request does not redeploy a model automatically.</p></details>
-    <details><summary>Which Macs and runtimes?</summary><p>Apple Silicon on macOS 15 or later. llama.cpp (GGUF), MLX and Core ML wrappers ship in the box, and runtimes are enabled per Mac in its own config.</p></details>
-  </div>
+<section class="faq" id="faq" aria-labelledby="faq-h">
+  <h2 id="faq-h">Questions, answered.</h2>
+  <details><summary>Is the source code available?</summary><p>No. The Gryvia Apple source code is private. This repository holds documentation, this website and the downloads. The licence text is in <a href="https://github.com/zyvorai/gryvia-apple/blob/main/LICENSE">LICENSE</a>.</p></details>
+<details><summary>How do I try it, and what needs a plan?</summary><p>Write to sales@zyvor.dev for a free 30-day trial key. Running it for real work, whether you are one person at home (Personal plan) or a business (Solo, Team or larger), needs a plan from <a href="https://zyvor.dev/buy">zyvor.dev/buy</a>. v0.4.0 and earlier were released with a free personal-use grant, which stays valid for those versions. The LICENSE file is the authority; ask sales@zyvor.dev if your case is unclear.</p></details>
+<details><summary>Does it split one model across several Macs?</summary><p>No. For that, look at exo or MLX distributed. Gryvia decides which whole job runs on which Mac and under whose quota.</p></details>
+<details><summary>Is GPU utilisation per job?</summary><p>No. It is the whole Mac's GPU load as macOS reports it, including other apps. Reservations are admission bookkeeping and energy figures are estimates.</p></details>
+<details><summary>What is measured, and what is not?</summary><p>GPU core counts and utilisation come from macOS (the IORegistry, no sudo) and were matched against <code>ioreg</code> on a dev Mac and a Mac mini in a dated validation run on 2026-10-14. Replicas across two physical Macs are not yet measured, and in that run the Metal, MLX and llama runtimes, GPU throughput and isolation, and the energy helper on real hardware were not verified.</p></details>
+<details><summary>Can I use a Mac that someone is also working on?</summary><p>Yes: set its policy to &ldquo;only when I am away&rdquo;. Work starts after the idle time you choose and yields when the owner returns. Battery, Low Power Mode and call guards apply.</p></details>
+<details><summary>What does it send where?</summary><p>Agents poll your control plane outbound. Nothing is sent to Zyvor. Models are downloaded only from huggingface.co or hf.co, with a size cap and a recorded SHA-256.</p></details>
+<details><summary>Do deployed models hold memory forever?</summary><p>Only until you stop them. Idle eviction is opt-in; there is no autoscaler, and the next request does not redeploy a model automatically.</p></details>
+<details><summary>Which Macs and runtimes?</summary><p>Apple silicon on macOS 15 or later. llama.cpp (GGUF), MLX and Core ML wrappers ship in the app, and runtimes are enabled per Mac.</p></details>
 </section>
 </main>
-
-<footer>
-  <div class="wrap cols">
-    <div><strong>Gryvia for Apple Silicon</strong><br>© 2026 Zyvor AI Labs Private Limited. Licensed under the terms in LICENSE.<br>Apple, Mac, macOS, Metal and Apple Silicon are trademarks of Apple Inc. Not affiliated with or endorsed by Apple.</div>
-    <div><a href="https://github.com/zyvorai/gryvia-apple">GitHub</a> · <a href="https://github.com/zyvorai/gryvia-apple/blob/main/SECURITY.md">Security</a> · <a href="https://github.com/zyvorai/gryvia-apple/releases">Releases</a> · <a href="start/">Get started</a></div>
-  </div>
+<footer class="footer">
+  <p><strong>Gryvia Apple</strong> · The Gryvia Apple source code is private.</p>
+  <p class="links"><a href="start/">Start guide</a><a href="https://github.com/zyvorai/gryvia-apple/blob/main/docs/GETTING-STARTED.md">Getting started</a><a href="https://github.com/zyvorai/gryvia-apple/blob/main/docs/USER-GUIDE.md">User guide</a><a href="https://github.com/zyvorai/gryvia-apple/blob/main/docs/FAQ.md">FAQ</a><a href="https://github.com/zyvorai/gryvia-apple/blob/main/CHANGELOG.md">Changelog</a><a href="https://github.com/zyvorai/gryvia-apple/releases">Releases</a><a href="https://github.com/zyvorai/gryvia-apple">GitHub</a><a href="https://github.com/zyvorai/gryvia-apple/blob/main/LICENSE">LICENSE</a><a href="https://github.com/zyvorai/gryvia-apple/blob/main/SECURITY.md">SECURITY</a><a href="mailto:sales@zyvor.dev">sales@zyvor.dev</a></p>
+  <p>© 2026 Zyvor AI Labs Private Limited · <a href="https://zyvor.dev">zyvor.dev</a> · Apple, Mac, macOS, Metal and Apple silicon are trademarks of Apple Inc. Not affiliated with or endorsed by Apple.</p>
 </footer>
-<script src="site.js"></script>
 </body>
 </html>
