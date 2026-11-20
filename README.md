@@ -17,7 +17,7 @@
 **[Download Gryvia-0.5.2.dmg](https://github.com/zyvorai/gryvia-apple/releases/download/v0.5.2/Gryvia-0.5.2.dmg)** ([release page](https://github.com/zyvorai/gryvia-apple/releases/tag/v0.5.2)). Developer ID signed and notarized.
 
 - macOS 15 or later, Apple silicon.
-- The app runs without a key. For a free 30-day trial key, email sales@zyvor.dev.
+- The app runs without a key. For a free 30-day trial key, email sales@zyvor.dev. The trial is soft: nothing is disabled and no data is lost when it ends.
 - SHA-256: `a1e406d73bffd4492f4876f577b498ffc4bb0a1a26b46d71775ae06dd4d8251d`
 - Verify: `shasum -a 256 -c Gryvia-0.5.2.dmg.sha256` (the checksum file is attached to the release).
 
@@ -50,7 +50,7 @@ macOS 15 or later on Apple silicon. A second Mac is optional.
 
 ## Trial and licence
 
-The app runs without a key. For a free 30-day trial key, email sales@zyvor.dev. Licences and plans: https://zyvor.dev/buy. The licence text is in [LICENSE](LICENSE); see also [docs/COMMERCIAL-LICENSE.md](docs/COMMERCIAL-LICENSE.md).
+The app runs without a key. For a free 30-day trial key, email sales@zyvor.dev. The trial is soft: nothing is disabled and no data is lost when it ends. Licences and plans: https://zyvor.dev/buy. The licence text is in [LICENSE](LICENSE); see also [docs/COMMERCIAL-LICENSE.md](docs/COMMERCIAL-LICENSE.md).
 
 ## Honest limits
 

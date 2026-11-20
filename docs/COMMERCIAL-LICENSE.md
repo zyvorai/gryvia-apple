@@ -6,7 +6,7 @@ grants: a **Personal** plan for one individual and **business and commercial** p
 ## Personal plan
 
 Personal means one individual, for no business, employer or income-producing purpose. It is a one-time payment of
-₹4,299 including GST (about US$50), covers that individual's own Macs, and is the lowest-priced plan. It does not
+₹4,299 including GST (about US$43 excluding GST), covers that individual's own Macs, and is the lowest-priced plan. It does not
 cover business use; use a plan below for that.
 
 ## The business grant
@@ -23,9 +23,9 @@ non-exclusive, non-transferable licence to:
 
 | Plan | Price | Covers |
 |---|---|---|
-| Personal | ₹4,299 one-time (about US$50) | One individual, no business use |
-| Solo / small team | ₹4,999 per year (about US$59) | One legal entity, up to 5 Macs |
-| Team | ₹19,999 per year (about US$239) | One legal entity, up to 25 Macs |
+| Personal | ₹4,299 one-time (about US$43 excluding GST) | One individual, no business use |
+| Solo / small team | ₹4,999 per year (about US$50 excluding GST) | One legal entity, up to 5 Macs |
+| Team | ₹19,999 per year (about US$202 excluding GST) | One legal entity, up to 25 Macs |
 | Larger fleets | by quote | More than 25 Macs or several entities: sales@zyvor.dev |
 
 Payment is by invoice. *[Licensor and counsel to confirm: the grant text above says "perpetual" and these plans are annual, so decide whether the grant is perpetual for the versions released while paid, or lapses.]*
