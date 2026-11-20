@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+<title>Get started with Gryvia Apple</title>
+<meta name="description" content="Download, install and try Gryvia Apple: requirements, the free 30-day trial key, first launch, adding a Mac and calling a served model.">
+
+<link rel="canonical" href="https://zyvorai.github.io/gryvia-apple/start/">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Gryvia Apple">
+<meta property="og:title" content="Get started with Gryvia Apple">
+<meta property="og:description" content="Download, install and try Gryvia Apple: requirements, the free 30-day trial key, first launch, adding a Mac and calling a served model.">
+<meta property="og:url" content="https://zyvorai.github.io/gryvia-apple/start/">
+<meta property="og:image" content="https://zyvorai.github.io/gryvia-apple/social/og.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Gryvia Apple: Your Macs, scheduled. The app window shows demo data.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Get started with Gryvia Apple">
+<meta name="twitter:description" content="Download, install and try Gryvia Apple: requirements, the free 30-day trial key, first launch, adding a Mac and calling a served model.">
+<meta name="twitter:image" content="https://zyvorai.github.io/gryvia-apple/social/og.png">
+<meta name="twitter:image:alt" content="Gryvia Apple: Your Macs, scheduled. The app window shows demo data.">
+<link rel="stylesheet" href="../assets/docs.css">
+<style>:root{--accent-btn:#0071e3;--accent-ink:#0071e3;--accent-grad-a:#0071e3;--accent-grad-b:#5e5ce6}@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--accent-ink:#2997ff}}</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav">
+  <a class="brand" href="../" aria-label="Gryvia Apple home"><img src="../favicon.svg" width="26" height="26" alt=""><span>Gryvia</span></a>
+  <nav aria-label="Primary"><ul><li><a href="../">Overview</a></li><li><a href="../#pricing">Pricing</a></li></ul></nav>
+  <a class="btn small primary" href="https://github.com/zyvorai/gryvia-apple/releases/tag/v0.5.2">Download</a>
+</header>
+<main id="main" class="page">
+  <article class="prose">
+    <h1>From a download to a working fleet.</h1>
+    <p class="lede">Install the notarized app, start your 30-day trial, add a Mac and call a model through the OpenAI-style endpoint.</p>
+    <h2 id="download">1. Download and verify</h2>
+<p><strong>You need:</strong> an Apple silicon Mac on macOS 15 or later. A second Mac is optional.</p>
+<p>Download <a href="https://github.com/zyvorai/gryvia-apple/releases/download/v0.5.2/Gryvia-0.5.2.dmg">Gryvia-0.5.2.dmg</a> and its <code>.sha256</code> file from the <a href="https://github.com/zyvorai/gryvia-apple/releases/tag/v0.5.2">release page</a>. The DMG is Developer ID signed and notarized.</p>
+<pre><code>shasum -a 256 -c Gryvia-0.5.2.dmg.sha256</code></pre>
+<p>The app runs without a key. For a free 30-day trial key, email sales@zyvor.dev. Licences are at <a href="https://zyvor.dev/buy#gryvia">zyvor.dev/buy</a> (from INR 4,299 incl. GST in India, about US$43 excl. tax elsewhere).</p>
+<h2 id="install">2. Install and open</h2>
+<p>Open the DMG and drag <strong>Gryvia.app</strong> to Applications. The first launch shows a short Welcome; reopen it from <strong>Help</strong>. Paste an admin token once; it is kept in your login Keychain. Press <strong>Run demo job</strong> to see admission, a lease and a result.</p>
+<p><strong>&#8984;K</strong> opens a command palette, <strong>&#8984;1&#8230;&#8984;0</strong> switch panes, and clicking an underlined term such as <em>reserved</em> explains it. Open a queued job to see why it is waiting. Reservations are bookkeeping, not a GPU meter.</p>
+<h2 id="add-a-mac">3. Add a Mac</h2>
+<p>Use <strong>Add a Mac</strong> in the app or the web dashboard to create a single-use join code (valid 15 minutes). Enter it on the new Mac to enrol it; no config edit or restart is needed. A Mac's token can be revoked later. A control plane that other Macs reach must use HTTPS; plain HTTP is accepted only for loopback.</p>
+<p>Each Mac has an owner policy: always, only when its owner is away, or paused, with battery, Low Power Mode and call guards.</p>
+<h2 id="call-a-model">4. Call a model</h2>
+<p>Once a model is deployed its endpoint is OpenAI-style. Use a tenant token:</p>
+<pre><code>curl -s http://127.0.0.1:8443/v1/chat/completions \
+  -H "Authorization: Bearer $GRYVIA_TENANT_TOKEN" -H 'Content-Type: application/json' \
+  -d '{"model":"my-llama","messages":[{"role":"user","content":"Say hi"}]}'</code></pre>
+<p>Add <code>"stream": true</code> for server-sent events. Model servers listen on the worker's loopback only, and your platform token never reaches them. With replicas the gateway sends each request to the replica with the fewest in flight and tries one other before returning 502. Deployments keep their memory reservation until stopped; idle eviction is opt-in.</p>
+<h2 id="troubleshooting">When something is wrong</h2>
+<div class="table-wrap"><table>
+<tr><th>Symptom</th><th>Check</th></tr>
+<tr><td>Deploy stays queued</td><td>Is the Mac online, not drained, with enough free GiB and the model on it?</td></tr>
+<tr><td>Request returns 503</td><td>The model is not deployed, was evicted, or its Mac is offline.</td></tr>
+<tr><td>Request returns 502</td><td>The replica failed; with replicas the gateway already tried one other.</td></tr>
+<tr><td>Gatekeeper blocks the app</td><td>Verify the checksum; the 0.5.2 DMG is notarized, so a block usually means a damaged download.</td></tr>
+</table></div>
+<h2 id="limits">Honest limits</h2>
+<p>One GPU per Mac; GPU utilisation is device-wide, not per job; reservations are bookkeeping; energy is an estimate; runtimes are not sandboxed, so only enrol Macs you would let an admin run code on. Replicas across two physical Macs are not yet measured. See <a href="https://github.com/zyvorai/gryvia-apple/blob/main/SECURITY.md">SECURITY.md</a>.</p>
+  </article>
+</main>
+<footer class="footer">
+  <p><strong>Gryvia Apple</strong> · The Gryvia Apple source code is private.</p>
+  <p class="links"><a href="../start/">Start guide</a><a href="https://github.com/zyvorai/gryvia-apple/blob/main/docs/GETTING-STARTED.md">Getting started</a><a href="https://github.com/zyvorai/gryvia-apple/blob/main/docs/USER-GUIDE.md">User guide</a><a href="https://github.com/zyvorai/gryvia-apple/blob/main/docs/FAQ.md">FAQ</a><a href="https://github.com/zyvorai/gryvia-apple/blob/main/CHANGELOG.md">Changelog</a><a href="https://github.com/zyvorai/gryvia-apple/releases">Releases</a><a href="https://github.com/zyvorai/gryvia-apple">GitHub</a><a href="https://github.com/zyvorai/gryvia-apple/blob/main/LICENSE">LICENSE</a><a href="https://github.com/zyvorai/gryvia-apple/blob/main/SECURITY.md">SECURITY</a><a href="mailto:sales@zyvor.dev">sales@zyvor.dev</a></p>
+  <p>© 2026 Zyvor AI Labs Private Limited · <a href="https://zyvor.dev">zyvor.dev</a> · Apple, Mac, macOS, Metal and Apple silicon are trademarks of Apple Inc. Not affiliated with or endorsed by Apple.</p>
+</footer>
+</body>
+</html>
