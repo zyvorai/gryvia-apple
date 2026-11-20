@@ -2,7 +2,7 @@
 
 **Is the source code available?** No. The Gryvia Apple source code is private. This repository holds documentation, the website and the downloads.
 
-**How do I try it?** The app runs without a key. For a free 30-day trial key, email sales@zyvor.dev. Download the notarized DMG from the [release page](https://github.com/zyvorai/gryvia-apple/releases/tag/v0.5.2). Licences are at https://zyvor.dev/buy; the terms are in [LICENSE](../LICENSE) and [COMMERCIAL-LICENSE.md](COMMERCIAL-LICENSE.md).
+**How do I try it?** The app runs without a key. For a free 30-day trial key, email sales@zyvor.dev. Download the notarized DMG from the [release page](https://github.com/zyvorai/gryvia-apple/releases/tag/v0.5.2). Licences are at https://zyvor.dev/buy#gryvia (Personal INR 4,299 one-time, about US$43 excl. tax outside India; Solo INR 4,999 per year, about US$50; Team INR 19,999 per year, about US$202; INR incl. 18% GST in India, US dollars excl. tax elsewhere); the terms are in [LICENSE](../LICENSE) and [COMMERCIAL-LICENSE.md](COMMERCIAL-LICENSE.md).
 
 **What does it need?** macOS 15 or later on Apple silicon.
 

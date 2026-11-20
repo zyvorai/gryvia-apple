@@ -12,7 +12,7 @@ Download `Gryvia-0.5.2.dmg` and `Gryvia-0.5.2.dmg.sha256` from the [release page
 shasum -a 256 -c Gryvia-0.5.2.dmg.sha256
 ```
 
-The app runs without a key. For a free 30-day trial key, email sales@zyvor.dev. The trial is soft: nothing is disabled and no data is lost when it ends. Licences are at https://zyvor.dev/buy.
+The app runs without a key. For a free 30-day trial key, email sales@zyvor.dev. The trial is soft: nothing is disabled and no data is lost when it ends. Licences are at https://zyvor.dev/buy#gryvia (from INR 4,299 incl. GST in India, about US$43 excl. tax elsewhere). Prices: INR incl. 18% GST in India; US dollars excl. tax elsewhere (VAT, GST or sales tax added where applicable). Pay online by UPI, card or netbanking; international cards work (charged in rupees); or request a US-dollar invoice by bank transfer. Custom pricing: contact sales@zyvor.dev.
 
 ## 2. Install and open
 
