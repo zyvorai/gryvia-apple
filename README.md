@@ -50,7 +50,7 @@ macOS 15 or later on Apple silicon. A second Mac is optional.
 
 ## Trial and licence
 
-The app runs without a key. For a free 30-day trial key, email sales@zyvor.dev. No data is lost when it ends; a commercial license is required to keep using it. Licences and plans: https://zyvor.dev/buy#gryvia. Prices: Personal INR 4,299 one-time (about US$43 excl. tax outside India); Solo (up to 5 Macs) INR 4,999 per year (about US$50); Team (up to 25 Macs) INR 19,999 per year (about US$202). Prices: INR incl. 18% GST in India; US dollars excl. tax elsewhere (VAT, GST or sales tax added where applicable). Pay online by UPI, card or netbanking; international cards work (charged in rupees); or request a US-dollar invoice by bank transfer. Custom pricing: contact sales@zyvor.dev. The licence text is in [LICENSE](LICENSE); see also [docs/COMMERCIAL-LICENSE.md](docs/COMMERCIAL-LICENSE.md).
+The app runs without a key. For a free 30-day trial key, email sales@zyvor.dev. No data is lost when it ends; a commercial license is required to keep using it. Licences and plans: https://zyvor.dev/buy#gryvia. Prices: Personal INR 4,299 one-time (about US$43 excl. tax outside India); Solo (up to 5 Macs) INR 4,999 per year (about US$50); Team (up to 25 Macs) INR 19,999 per year (about US$202). Prices: INR incl. 18% GST in India; US dollars excl. tax elsewhere (VAT, GST or sales tax added where applicable). Pay online by UPI, card or netbanking; international cards work (charged in rupees). Orders of USD 5,000 or more and quotes are invoiced in USD through Skydo. Custom pricing: contact sales@zyvor.dev. The licence text is in [LICENSE](LICENSE); see also [docs/COMMERCIAL-LICENSE.md](docs/COMMERCIAL-LICENSE.md).
 
 ## Honest limits
 
