@@ -28,8 +28,9 @@
 <meta name="twitter:image" content="https://zyvorai.github.io/gryvia-apple/social/og.png">
 <meta name="twitter:image:alt" content="Gryvia Apple: Your Macs, scheduled. The app window shows demo data.">
 <link rel="stylesheet" href="assets/landing.css">
+<link rel="stylesheet" href="assets/zyvor-buyer.css">
 <style>:root{--accent-btn:#0071e3;--accent-ink:#0071e3;--accent-grad-a:#0071e3;--accent-grad-b:#5e5ce6}@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--accent-ink:#2997ff}}:root[data-theme="dark"]{--accent-ink:#2997ff}</style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Gryvia Apple","applicationCategory":"DeveloperApplication","operatingSystem":"macOS","softwareVersion":"0.5.2","downloadUrl":"https://github.com/zyvorai/gryvia-apple/releases/tag/v0.5.2","url":"https://zyvorai.github.io/gryvia-apple/","description":"A multi-tenant control plane for Apple silicon fleets: memory-aware admission, quotas, live GPU cores and signed provenance. Notarized Mac app for macOS 15 or later.","image":"https://zyvorai.github.io/gryvia-apple/social/og.png","publisher":{"@type":"Organization","name":"Zyvor AI Labs Private Limited","url":"https://zyvor.dev"},"offers":[{"@type":"Offer","name":"Gryvia Apple Solo (up to 5 Macs, per year) (India, incl. 18% GST)","price":"4999","priceCurrency":"INR","url":"https://zyvor.dev/buy#gryvia"},{"@type":"Offer","name":"Gryvia Apple Solo (up to 5 Macs, per year) (outside India, excl. tax)","price":"50","priceCurrency":"USD","url":"https://zyvor.dev/buy#gryvia"},{"@type":"Offer","name":"Gryvia Apple Team (up to 25 Macs, per year) (India, incl. 18% GST)","price":"19999","priceCurrency":"INR","url":"https://zyvor.dev/buy#gryvia"},{"@type":"Offer","name":"Gryvia Apple Team (up to 25 Macs, per year) (outside India, excl. tax)","price":"202","priceCurrency":"USD","url":"https://zyvor.dev/buy#gryvia"},{"@type":"Offer","name":"Gryvia Apple Personal (one-time) (India, incl. 18% GST)","price":"4299","priceCurrency":"INR","url":"https://zyvor.dev/buy#gryvia"},{"@type":"Offer","name":"Gryvia Apple Personal (one-time) (outside India, excl. tax)","price":"43","priceCurrency":"USD","url":"https://zyvor.dev/buy#gryvia"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Gryvia Apple","applicationCategory":"DeveloperApplication","operatingSystem":"macOS","softwareVersion":"0.5.2","downloadUrl":"https://github.com/zyvorai/gryvia-apple/releases/tag/v0.5.2","url":"https://zyvorai.github.io/gryvia-apple/","description":"A multi-tenant control plane for Apple silicon fleets: memory-aware admission, quotas, live GPU cores and signed provenance. Notarized Mac app for macOS 15 or later.","image":"https://zyvorai.github.io/gryvia-apple/social/og.png","publisher":{"@type":"Organization","name":"Zyvor AI Labs Private Limited","url":"https://zyvor.dev"}}</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -45,9 +46,22 @@
   <h1 id="top">Gryvia</h1>
   <p class="tagline">Your Macs, scheduled.</p>
   <p class="promise"><strong>A control plane for Apple silicon fleets.</strong> Memory-aware admission, quotas, live GPU cores and signed provenance in a notarized Mac app. Gryvia admits and places inference, fine-tuning and benchmark jobs against each Mac&#x27;s unified-memory budget.</p>
-  <p class="cta"><a class="btn primary" href="https://github.com/zyvorai/gryvia-apple/releases/tag/v0.5.2">Download the 30-day trial</a><a class="textlink" href="#features">Learn more</a></p>
-  <p class="fine">macOS 15 or later · Apple silicon · notarized · The app runs without a key. For a free 30-day trial key, email sales@zyvor.dev. The trial is soft: nothing is disabled and no data is lost.</p>
+  <div class="buyer" role="group" aria-label="Get Gryvia">
+    <div class="actions">
+      <a class="btn primary" href="https://github.com/zyvorai/gryvia-apple/releases/download/v0.5.2/Gryvia-0.5.2.dmg">Download Gryvia 0.5.2</a>
+      <a class="btn ghost" href="https://zyvor.dev/contact?intent=trial&amp;product=gryvia-apple" rel="noopener">Ask for a 30-day trial</a>
+      <a class="btn ghost" href="https://zyvor.dev/buy" rel="noopener">Buy a license</a>
+    </div>
+    <p class="sub">Gryvia-0.5.2.dmg · <a href="https://zyvor.dev/pricing" rel="noopener">See current prices</a> · <a href="https://github.com/zyvorai/gryvia-apple/releases/tag/v0.5.2">All downloads</a></p>
+    <p class="trust"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.2 8-8 9-4.8-1-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg><span><strong>Verified by Apple:</strong> Developer ID signed and notarized. This applies to the 0.5.2 DMG.</span></p>
+    <ul class="reqs"><li>Requires macOS 15 or later on Apple silicon. Runtimes are not sandboxed, so enrol only Macs you would let an admin run code on.</li></ul>
+  </div>
   <figure class="shot hero-shot"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/img/hero-live-dark-1200.webp 1200w" sizes="(min-width:1080px) 1040px, 100vw"><img src="assets/img/hero-live-light-1200.webp" srcset="assets/img/hero-live-light-1200.webp 1200w" sizes="(min-width:1080px) 1040px, 100vw" width="1280" height="820" alt="Gryvia Live pane in the Mac app: 100 GPU cores across 2 online Macs, 52% GPU busy, the scheduling queue and per-Mac GPU core grids." fetchpriority="high" decoding="async"></picture><figcaption>The Live pane in the Mac app. Demo data on a simulated fleet, not a real one.</figcaption></figure>
+</section>
+
+<section class="outcomes" aria-labelledby="outcomes-h">
+  <h2 id="outcomes-h">Schedule work across your Macs.</h2>
+  <ul class="tiles"><li class="tile"><h3>Every Mac, counted</h3><p>GPU cores and measured busy percentage straight from macOS, memory reservations by job, and the scheduler&#x27;s reasoning as it happens.</p></li><li class="tile"><h3>Check a model fits before it runs</h3><p>See whether a model fits before you download it (the fit figure is an estimate), and open a queued job to see why it is waiting.</p></li><li class="tile"><h3>Owners stay in control</h3><p>Each Mac chooses when it may run fleet work: always, only when its owner is away, or paused, with battery and call guards.</p></li></ul>
 </section>
 
 <section class="band" aria-label="Overview">
@@ -91,14 +105,11 @@
   <p class="cta"><a class="btn primary" href="https://github.com/zyvorai/gryvia-apple/releases/download/v0.5.2/Gryvia-0.5.2.dmg">Download Gryvia-0.5.2.dmg</a><a class="textlink" href="https://github.com/zyvorai/gryvia-apple/releases/tag/v0.5.2">Release page</a><a class="textlink" href="start/">Install guide</a></p>
 </section>
 
-<section class="pricing" id="pricing" aria-labelledby="pricing-h">
-  <div class="inner wide">
-  <h2 id="pricing-h" style="text-align:left">Try it for 30 days. Pay to run it for real work.</h2>
-  <p class="lead">The app runs without a key. For a free 30-day trial key, email sales@zyvor.dev. Running it for real work, at home or in a business, needs a plan, and the lowest plan is for one person. Every plan includes the same Developer ID signed and notarized build and a GST invoice.</p>
-<p class="lead">Prices: INR incl. 18% GST in India; US dollars excl. tax elsewhere (VAT, GST or sales tax added where applicable). Pay online by UPI, card or netbanking; international cards work (charged in rupees); or request a US-dollar invoice by bank transfer. Custom pricing: contact sales@zyvor.dev.</p>
-<div class="plans"><div class="plan"><h3>Personal</h3><p class="price">INR 4,299</p><p class="per">one-time incl. GST in India (about US$43 excl. tax outside India)</p><p class="for">One person, no business use.</p><p class="cta"><a class="btn primary" href="https://rzp.io/rzp/7A92MBZr" rel="noopener">Buy Personal</a></p></div><div class="plan"><h3>Solo / small team</h3><p class="price">INR 4,999</p><p class="per">per year incl. GST in India (about US$50 excl. tax outside India)</p><p class="for">Business use, up to 5 Macs. One legal entity.</p><p class="cta"><a class="btn primary" href="https://rzp.io/rzp/XcUsxE2" rel="noopener">Buy Solo</a></p></div><div class="plan"><h3>Team</h3><p class="price">INR 19,999</p><p class="per">per year incl. GST in India (about US$202 excl. tax outside India)</p><p class="for">Business use, up to 25 Macs. One legal entity.</p><p class="cta"><a class="btn primary" href="https://rzp.io/rzp/argeq3h" rel="noopener">Buy Team</a></p></div></div>
-<p class="fine">More than 25 Macs or several entities: custom terms and support, write to <a href="mailto:sales@zyvor.dev">sales@zyvor.dev</a>. No redistribution or resale. Business plans are invoiced for now: write to sales@zyvor.dev and you get a GST invoice and a download link. This is a plain-language summary; the <a href="https://github.com/zyvorai/gryvia-apple/blob/main/LICENSE">LICENSE</a> file is what counts, and it applies to versions after v0.4.0 (v0.4.0 and earlier keep their original personal-use grant). <a href="https://github.com/zyvorai/gryvia-apple/blob/main/docs/COMMERCIAL-LICENSE.md">Licence terms</a> (draft). <a class="btn primary" href="https://zyvor.dev/buy#gryvia" rel="noopener">Buy</a> <a class="btn ghost" href="mailto:sales@zyvor.dev?subject=Gryvia%20Apple%2030-day%20trial%20key">Start 30-day trial</a></p>
-  </div>
+<section class="buy-pointer" id="pricing" aria-labelledby="pricing-h">
+  <h2 id="pricing-h">Prices and licenses</h2>
+  <p>Current prices, in your currency where available, are on zyvor.dev. You can evaluate for 30 days before you decide.</p>
+  <p class="cta"><a class="btn primary" href="https://zyvor.dev/buy" rel="noopener">Buy a license</a><a class="btn ghost" href="https://zyvor.dev/contact?intent=trial&amp;product=gryvia-apple" rel="noopener">Ask for a 30-day trial</a><a class="textlink" href="https://zyvor.dev/pricing" rel="noopener">See current prices</a></p>
+  <p class="fine"><a href="https://github.com/zyvorai/gryvia-apple/blob/main/docs/COMMERCIAL-LICENSE.md">Licence terms</a> · Several Macs or a larger rollout: <a href="https://zyvor.dev/contact?intent=sales&amp;product=gryvia-apple" rel="noopener">contact sales</a>.</p>
 </section>
 
 <section class="faq" id="faq" aria-labelledby="faq-h">
@@ -116,7 +127,7 @@
 </main>
 <footer class="footer">
   <p><strong>Gryvia Apple</strong> · The Gryvia Apple source code is private.</p>
-  <p class="links"><a href="start/">Start guide</a><a href="https://github.com/zyvorai/gryvia-apple/blob/main/docs/GETTING-STARTED.md">Getting started</a><a href="https://github.com/zyvorai/gryvia-apple/blob/main/docs/USER-GUIDE.md">User guide</a><a href="https://github.com/zyvorai/gryvia-apple/blob/main/docs/FAQ.md">FAQ</a><a href="https://github.com/zyvorai/gryvia-apple/blob/main/CHANGELOG.md">Changelog</a><a href="https://github.com/zyvorai/gryvia-apple/releases">Releases</a><a href="https://github.com/zyvorai/gryvia-apple">GitHub</a><a href="https://github.com/zyvorai/gryvia-apple/blob/main/LICENSE">LICENSE</a><a href="https://github.com/zyvorai/gryvia-apple/blob/main/SECURITY.md">SECURITY</a><a href="mailto:sales@zyvor.dev">sales@zyvor.dev</a></p>
+  <p class="links"><a href="https://zyvor.dev/contact">Support</a><a href="start/">Start guide</a><a href="https://github.com/zyvorai/gryvia-apple/blob/main/docs/GETTING-STARTED.md">Getting started</a><a href="https://github.com/zyvorai/gryvia-apple/blob/main/docs/USER-GUIDE.md">User guide</a><a href="https://github.com/zyvorai/gryvia-apple/blob/main/docs/FAQ.md">FAQ</a><a href="https://github.com/zyvorai/gryvia-apple/blob/main/CHANGELOG.md">Changelog</a><a href="https://github.com/zyvorai/gryvia-apple/releases">Releases</a><a href="https://github.com/zyvorai/gryvia-apple">GitHub</a><a href="https://github.com/zyvorai/gryvia-apple/blob/main/LICENSE">LICENSE</a><a href="https://github.com/zyvorai/gryvia-apple/blob/main/SECURITY.md">SECURITY</a><a href="mailto:sales@zyvor.dev">sales@zyvor.dev</a></p>
   <p>© 2026 Zyvor AI Labs Private Limited · <a href="https://zyvor.dev">zyvor.dev</a> · Apple, Mac, macOS, Metal and Apple silicon are trademarks of Apple Inc. Not affiliated with or endorsed by Apple.</p>
 </footer>
 </body>
